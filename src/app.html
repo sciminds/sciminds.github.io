@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			// Apply theme before page renders to prevent flash of wrong theme (FOUC)
+			// This runs synchronously before any CSS or content loads
+			(function () {
+				try {
+					const savedTheme = localStorage.getItem('theme');
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					// Use saved theme if exists, otherwise respect browser preference
+					const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+					if (isDark) {
+						document.documentElement.classList.add('dark');
+					}
+				} catch (e) {
+					// If localStorage is unavailable, silently fail
+				}
+			})();
+		</script>
+		<!-- Preload critical fonts for performance -->
+		<link
+			rel="preload"
+			href="/fonts/styrene-font-family/StyreneA-Regular-Trial-BF63f6cbd970ee9.otf"
+			as="font"
+			type="font/otf"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			href="/fonts/styrene-font-family/StyreneA-RegularItalic-Trial-BF63f6cbd94325f.otf"
+			as="font"
+			type="font/otf"
+			crossorigin="anonymous"
+		/>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

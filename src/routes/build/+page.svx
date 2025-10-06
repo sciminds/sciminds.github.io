@@ -1,0 +1,95 @@
+---
+title: Build
+description: Open-source tools and software from SciMinds for social science research. Python libraries for statistics, machine learning, fMRI analysis, and facial expression analysis.
+h1: Tools & Software
+---
+
+<script>
+  import CallOut from '$lib/components/CallOut.svelte';
+</script>
+
+# Tools & Software
+
+<CallOut content="Toys and games are the preludes to serious ideas ~ Charles Eames" justify={false} width="w-[84%] md:w-full"></CallOut>
+
+## Pymer4
+
+<div class="reference">
+Jolly, (2018). Journal of Open Source Software.
+</div>
+
+`pymer4` is a Python library for **estimating generalized multilevel models.** It tries to bring the best of R's model formula syntax (e.g, `y~x1+x2`) to Python with full support for `lm`, `glm`, `lmer`, and `glmer` models and lots of quality-of-life improvements for staying within the scientific Python ecosystem. If you're primarily a Python user and already work with tools like `polars` and `seaborn` you'll love `pymer4`! 
+
+<div class="links">
+
+[Tutorials & Documentation](https://eshinjolly.com/pymer4/) | [Github](https://github.com/ejolly/pymer4) 
+
+</div>
+
+
+## Nltools
+
+<div class="reference">
+Chang, Jolly, et al., (2018). Zenodo. 
+</div>
+
+`nltools` is a toolbox we co-maintain with the [Cosan Lab](https://cosanlab.com) that makes it easier and more intuitive to analyze **functional brain imaging data (fMRI)** using cutting-edge computational and machine-learning approaches. Check out [this video from Scipy 2020](https://www.youtube.com/watch?v=1c1AnXLs7xM) for an overview of the design philosophy.
+
+<div class="links">
+
+[Tutorials & Documentation](https://nltools.org/) | [Github](https://github.com/cosanlab/nltools) 
+
+</div>
+
+## Pyfeat
+
+<div class="reference">
+Cheong*, Jolly*, Xie*, et al., (2023). Affective Science.
+</div>
+
+`pyfeat` is a toolbox we co-maintain with the [Cosan Lab](https://cosanlab.com) for social-scientists interested in analyzing **facial expressions.** We bring together state-of-the-art algorithms in deep computer vision that excel at extracting facial-landmarks, action-units, and emotional expressions while retraining all models from scratch with open weights and code. Check it out if you're interested in analyzing image and video data or designing novel experimental experiences. 
+
+<div class="links">
+
+[Tutorials & Documentation](https://py-feat.org) | [Github](https://github.com/cosanlab/py-feat) 
+
+</div>
+
+## Neighbors
+
+<div class="reference">
+Jolly et al., (2022). Affective Science.
+</div>
+
+`neighbors` is a toolbox that implements a variety of collaborative-filtering algorithms for **leveraging individual differences to make predictions on sparse (missing) data.** Given enough people and a few observations you build models to make incredibly reliable predictions on unseen data. This includes: self-reported emotions, emotion time-series, and even economic decisions. After all, why should [Netflix have all the fun?](https://en.wikipedia.org/wiki/Netflix_Prize)
+
+<div class="links">
+
+[Tutorials & Documentation](https://neighbors.cosanlab.com/) | [Github](https://github.com/cosanlab/neighbors) 
+
+</div>
+
+
+<style>
+  @reference "tailwindcss";
+
+  .links {
+    @apply my-2 text-base md:text-lg;
+  }
+
+  .links p {
+    @apply my-0!;
+  }
+
+  p:has(+.links) {
+    @apply mb-2!;
+  }
+  h2 {
+      @apply mb-0;
+  }
+  
+  div.reference {
+      @apply text-sm italic my-0 py-0;
+      color: var(--color-text-muted);
+  }
+</style>

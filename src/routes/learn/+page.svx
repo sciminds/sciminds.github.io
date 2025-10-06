@@ -1,0 +1,43 @@
+---
+title: Learn
+description: Educational resources and courses from SciMinds at UC San Diego. Graduate and undergraduate courses in statistics, social cognition, fMRI analysis, and facial expression analysis.
+h1: Learning Resources
+---
+
+# Courses & Education
+
+## Graduate Courses
+### Statistical Intuitions for Social Scientists
+
+<p class="subtitle">Offered Winter quarters at UCSD</p>
+
+This is the second-course in the two-course PhD statistics sequence in the department of Psychology at UCSD. Both courses are preceded by a [1-day workshop on computing fundamentals](https://jolly.ucsd.edu/fundamentals-workshop/). Building upon foundations of theory-building, experimental-design, and causal inference this course focuses on learning **statistical thinking** -- eschewing statistical cookbook recipes & rituals, and adopting **model-based thinking** and systematic practices for data analysis and inference. See open materials for the Winter 25 quarter at: [stat-intuitions.com](https://stat-intuitions.com/pages/home.html)
+
+## Undergraduate Courses
+### Social Cognition
+
+<p class="subtitle">Offered Fall quarters at UCSD</p>
+
+This course offers a **fresh integrative perspective on social cognition through a computational lens**. We draw connections between historical ideas and cutting-edge research work across: philosophy & cognitive science, social psychology & behavioral economics, computer science & artificial intelligence, and computational cognitive neuroscience to build a **cumulative scientific understanding of the social mind.** Students learn to think like social cognitive scientists, exploring how we construct social reality out of ambiguous social signals, and how those constructions can both connect us and divide us. You can explore interactive class examples and data from [attributing intentions to geometric shapes](https://jolly.ucsd.edu/shapes) (Heider & Simmel, 1944) and [comparing expected-value theory and expected-utility theory](https://tinyurl.com/137-decisions) when making risky-decisions (Neumann & Morgenstern, 1953; Kahneman et al, 1997).
+
+## Open Resources
+
+### Functional Neuroimaging (fMRI)
+We've contributed to a variety of tutorials and guides that can help you get started with using Python to analyze functional MRI data. You might start with [DartBrains](https://dartbrains.org/content/intro.html) an undergraduate course taught at Dartmouth College. Then move onto [Naturalistic Neuroimaging Analysis](https://naturalistic-data.org/content/intro.html) for more advanced approaches when working with non-traditional experimental designs (e.g. movies, conversations, etc). For more specific references check out the [documentation site](https://nltools.org) for the Python toolbox we co-maintain with the [Cosan Lab](https://cosanlab.com)
+
+### Affective Computing (facial analysis)
+We've contributed to a variety of [hands-on tutorials](https://py-feat.org/pages/intro.html) that can help you get started with using Python to analyze facial expressions. You can also download and play with some real data from a [workshop using these materials](https://compsan.org/Preconference_2024.html).
+
+<style>
+    @reference "tailwindcss";
+
+    .subtitle {
+        @apply text-sm italic my-0 py-0 md:-my-2;;
+        color: var(--color-text-muted);
+        
+    }
+
+    h3 {
+        color: var(--color-text-muted);
+    }
+</style>

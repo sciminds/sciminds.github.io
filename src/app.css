@@ -1,0 +1,626 @@
+/*
+ * ============================================================================
+ * TAILWIND CSS CONFIGURATION
+ * ============================================================================
+ * This file configures Tailwind CSS v4 and custom styles for the SciMinds site.
+ * 
+ * QUICK CUSTOMIZATION GUIDE:
+ * - Colors: See "COLOR CUSTOMIZATION" section below
+ * - Fonts: See "FONT CUSTOMIZATION" section below
+ * - Dark Mode: Automatically respects browser preference + manual toggle
+ * ============================================================================
+ */
+
+/* ============================================================================
+ * CHEAT SHEET: CUSTOM CLASSES & PATTERNS
+ * ============================================================================
+ * Quick reference for custom Tailwind utilities and standard patterns to use
+ * throughout the site. Use these consistently to maintain design coherence.
+ * ============================================================================
+ * 
+ * TEXT COLOR UTILITIES:
+ * --------------------
+ * text-primary      → Sky blue (main brand color, use for links, highlights)
+ * text-secondary    → Rose (hover states, accents)
+ * text-muted        → Muted/secondary text (adapts to light/dark mode)
+ * paper-title       → Italic styling for publication titles
+ * 
+ * Examples:
+ *   <a href="#" class="text-primary hover:text-secondary">Link</a>
+ *   <p class="text-muted">Secondary information</p>
+ *   <h3 class="paper-title">Publication Title</h3>
+ * 
+ * 
+ * SPECIAL EFFECTS:
+ * ----------------
+ * my-highlight      → Gradient highlight effect (cyan to fuchsia)
+ * divider           → Horizontal divider line (centered, 50% width)
+ * 
+ * Examples:
+ *   <span class="my-highlight">Special Text</span>
+ *   <hr class="divider" />
+ * 
+ * 
+ * ICONS:
+ * ------
+ * icon              → Standard icon sizing (responsive: 1.25rem mobile, 1.5rem desktop)
+ *                    Automatically adapts fill/color for light/dark mode
+ *                    Note: Responsive behavior uses @media query (Tailwind v4 limitation)
+ * 
+ * Examples:
+ *   <svg class="icon">...</svg>
+ * 
+ * 
+ * DARK MODE:
+ * ----------
+ * Use CSS variables for theme-level colors (preferred for consistency).
+ * Use Tailwind's dark: variant for component-specific styling.
+ * 
+ * Theme colors (use CSS variables):
+ *   text-muted        → Automatically adapts (zinc.600 → zinc.400)
+ *   text-primary      → Brand color (sky.500)
+ *   text-secondary    → Accent color (rose.500)
+ *   var(--color-body-bg) → Page background (adapts automatically)
+ * 
+ * Component-specific (use dark: variant):
+ *   <div class="bg-white dark:bg-zinc-900">Card background</div>
+ *   <input class="border-zinc-300 dark:border-zinc-600">Form elements</input>
+ * 
+ * Examples:
+ *   <!-- ✅ Theme color - use CSS variable utility -->
+ *   <p class="text-muted">Secondary text</p>
+ *   
+ *   <!-- ✅ Component-specific - use dark: variant -->
+ *   <div class="bg-white dark:bg-zinc-900 rounded-lg shadow">
+ *     Card content
+ *   </div>
+ * 
+ * Note: Dark mode automatically respects browser preference + manual toggle
+ * 
+ * 
+ * CUSTOM FONTS:
+ * -------------
+ * font-styrene-a    → Primary font (body text, default)
+ * font-styrene-b    → Secondary font (currently same as primary)
+ * 
+ * Examples:
+ *   <p class="font-styrene-a">Body text</p>
+ * 
+ * Note: Body text uses Styrene A by default, no class needed
+ * 
+ * 
+ * MARKDOWN CONTENT (PROSE):
+ * --------------------------
+ * prose-custom      → Applied automatically to markdown content
+ *                    Provides styled headings, links, code blocks, etc.
+ * 
+ * Standard pattern for markdown pages:
+ *   <article class="prose md:prose-base lg:prose-lg max-w-[78ch] mx-auto prose-custom">
+ *     <!-- Markdown content -->
+ *   </article>
+ * 
+ * Prose features:
+ *   - Responsive headings (H1, H2, H3) with clamp() sizing
+ *   - Brand-colored links with dotted underline on hover
+ *   - Styled code blocks and inline code
+ *   - Automatic dark mode support
+ * 
+ * 
+ * LAYOUT COMPONENTS:
+ * ------------------
+ * Use PageSection component for consistent page layouts:
+ * 
+ *   <PageSection variant="prose">   → Text-heavy content (max-w-prose md:max-w-4xl)
+ *   <PageSection variant="wide">    → Mixed content (max-w-5xl lg:max-w-7xl)
+ *   <PageSection variant="full">    → Custom layouts (max-w-[90rem])
+ * 
+ * Examples:
+ *   <PageSection variant="prose">
+ *     <h1>Article Title</h1>
+ *     <p>Article content...</p>
+ *   </PageSection>
+ * 
+ * 
+ * RESPONSIVE PATTERNS:
+ * --------------------
+ * Standard breakpoints:
+ *   sm:  640px  (small tablets)
+ *   md:  768px  (tablets)
+ *   lg:  1024px (desktops)
+ *   xl:  1280px (large desktops)
+ * 
+ * Common responsive patterns:
+ *   px-4 sm:px-6              → Responsive horizontal padding
+ *   text-sm md:text-base      → Responsive text sizing
+ *   flex-col md:flex-row      → Responsive flex direction
+ *   grid-cols-1 md:grid-cols-2 → Responsive grid columns
+ * 
+ * 
+ * COLOR VARIABLES (CSS Custom Properties):
+ * ----------------------------------------
+ * Available in CSS (use var()):
+ *   --color-primary          → Sky blue (brand color)
+ *   --color-secondary        → Rose (hover/accent)
+ *   --color-accent           → Cyan (special highlights)
+ *   --color-text-muted       → Muted text (adapts to theme)
+ *   --color-body-bg          → Page background (adapts to theme)
+ *   --color-body-text        → Main text color (adapts to theme)
+ *   --color-divider          → Divider lines (adapts to theme)
+ * 
+ * Examples (in CSS):
+ *   .custom-class {
+ *     color: var(--color-primary);
+ *     background: var(--color-body-bg);
+ *   }
+ * 
+ * 
+ * @APPLY DIRECTIVE:
+ * -----------------
+ * Use @apply in component-scoped <style> blocks for complex, repeated patterns.
+ * Avoid @apply for simple one-off styling - use Tailwind utilities directly.
+ * 
+ * ✅ Good use (complex, repeated patterns):
+ *   <style>
+ *     .team-member {
+ *       @apply mb-12 flex flex-col items-center md:gap-6 md:flex-row;
+ *     }
+ *   </style>
+ * 
+ * ❌ Avoid (simple one-off):
+ *   <div class="@apply p-4">  <!-- Just use class="p-4" -->
+ * 
+ * When to use @apply:
+ *   - Complex layouts with multiple utilities
+ *   - Repeated patterns across components
+ *   - Component-scoped styles (not global CSS)
+ *   - When readability is more important than bundle size
+ * 
+ * When NOT to use @apply:
+ *   - Simple single utilities (just use class="p-4")
+ *   - Dynamic classes (use conditional class strings)
+ *   - Global CSS (use utilities or custom CSS)
+ * 
+ * 
+ * STANDARD PATTERNS:
+ * ------------------
+ * 
+ * Links:
+ *   <a href="#" class="text-primary hover:text-secondary no-underline 
+ *                      hover:underline hover:underline-dotted">
+ *     Link text
+ *   </a>
+ * 
+ * Buttons:
+ *   <button class="px-4 py-2 bg-primary text-white rounded 
+ *                  hover:bg-secondary transition-colors">
+ *     Button
+ *   </button>
+ * 
+ * Cards/Containers:
+ *   <div class="p-6 bg-white dark:bg-zinc-900 rounded-lg shadow">
+ *     Content
+ *   </div>
+ * 
+ * Responsive Text:
+ *   <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">
+ *     Responsive Heading
+ *   </h1>
+ * 
+ * ============================================================================
+ */
+
+/* ============================================================================
+ * SECTION 1: TAILWIND SETUP
+ * ============================================================================
+ * These imports load Tailwind CSS and its plugins. Don't modify unless you
+ * know what you're doing.
+ * ============================================================================
+ */
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* ============================================================================
+ * SECTION 2: DARK MODE CONFIGURATION
+ * ============================================================================
+ * Dark mode automatically respects user's browser preference AND allows manual
+ * override via the theme toggle button. No changes needed here.
+ * ============================================================================
+ */
+@variant dark (&:where(@media (prefers-color-scheme: dark), .dark, .dark *));
+
+/* ============================================================================
+ * SECTION 3: FONT CUSTOMIZATION
+ * ============================================================================
+ * Customize fonts here. The site uses Styrene A and B font families.
+ * 
+ * To change fonts:
+ * 1. Update the font-family names below
+ * 2. Make sure font files are loaded in src/fonts.css
+ * ============================================================================
+ */
+@theme {
+	/* Primary font for body text */
+	--font-styrene-a: 'Styrene A', sans-serif;
+
+	/* Secondary font (currently same as primary) */
+	--font-styrene-b: 'Styrene B', sans-serif;
+}
+
+/* ============================================================================
+ * SECTION 4: COLOR CUSTOMIZATION
+ * ============================================================================
+ * 
+ * PRIMARY COLORS (used for links, highlights, buttons):
+ * - Primary: Sky blue (main brand color)
+ * - Secondary: Rose (hover states, accents)
+ * - Accent: Cyan (special highlights)
+ * 
+ * To change brand colors, modify the values below.
+ * Color names follow Tailwind's color palette (e.g., 'sky.500', 'rose.500')
+ * ============================================================================
+ */
+@theme {
+	/* Brand colors - change these to update site colors */
+	--color-primary: theme('colors.sky.500'); /* Main brand color */
+	--color-secondary: theme('colors.rose.500'); /* Hover/accent color */
+	--color-accent: theme('colors.cyan.400'); /* Special highlights */
+	--color-primary-dark: theme('colors.sky.400'); /* Light hover/accent color */
+	--color-secondary-dark: theme('colors.rose.400'); /* Light hover/accent color */
+}
+
+/* ============================================================================
+ * SECTION 5: LIGHT MODE COLORS
+ * ============================================================================
+ * Colors used when site is in light mode (default).
+ * 
+ * To customize light mode:
+ * - Change the color values below
+ * - Use Tailwind color names like 'zinc.500' or hex codes
+ * ============================================================================
+ */
+:root {
+	/* ========================================
+	 * TYPOGRAPHY COLORS
+	 * ======================================== */
+	--color-paper-title: theme('colors.zinc.500'); /* Publication titles (italic) */
+	--color-text-muted: theme('colors.zinc.600'); /* Muted/secondary text */
+	--color-h2: theme('colors.zinc.400'); /* H2 section headings */
+	--color-h3: theme('colors.zinc.400'); /* H3 subsection headings */
+	--color-body-text: theme('colors.black'); /* Main body text color */
+
+	/* ========================================
+	 * UI ELEMENT COLORS
+	 * ======================================== */
+	--color-divider: theme('colors.gray.300'); /* Horizontal divider lines */
+
+	/* ========================================
+	 * BACKGROUND COLORS
+	 * ======================================== */
+	--color-body-bg: theme('colors.zinc.100'); /* Page background */
+}
+
+/* ============================================================================
+ * SECTION 6: DARK MODE COLORS
+ * ============================================================================
+ * Colors used when site is in dark mode.
+ * 
+ * Dark mode is applied when .dark class is present on <html>.
+ * An inline script in app.html applies the .dark class before page render,
+ * preventing flash of wrong theme. The ThemeToggle component manages theme
+ * changes after page load.
+ * 
+ * To customize dark mode colors, modify the values below.
+ * ============================================================================
+ */
+:root.dark {
+	/* ========================================
+	 * TYPOGRAPHY COLORS (Dark Mode)
+	 * ======================================== */
+	--color-paper-title: theme('colors.zinc.500'); /* Publication titles (italic) */
+	--color-text-muted: theme('colors.zinc.400'); /* Muted/secondary text */
+	--color-h2: theme('colors.zinc.500'); /* H2 section headings */
+	--color-h3: theme('colors.zinc.500'); /* H3 subsection headings */
+	--color-body-text: theme('colors.zinc.100'); /* Main body text color */
+
+	/* ========================================
+	 * UI ELEMENT COLORS (Dark Mode)
+	 * ======================================== */
+	--color-divider: theme('colors.zinc.700'); /* Horizontal divider lines */
+
+	/* ========================================
+	 * BACKGROUND COLORS (Dark Mode)
+	 * ======================================== */
+	--color-body-bg: theme('colors.zinc.950'); /* Page background */
+}
+
+/* ============================================================================
+ * SECTION 7: BASE PAGE STYLES
+ * ============================================================================
+ * Styles applied to the entire page. These use the color variables defined
+ * above, so they automatically adapt to light/dark mode.
+ * ============================================================================
+ */
+body {
+	background-color: var(--color-body-bg);
+	font-family: var(--font-styrene-a);
+	color: var(--color-body-text);
+}
+
+/* ============================================================================
+ * SECTION 8: CUSTOM UTILITY CLASSES
+ * ============================================================================
+ * These are reusable CSS classes you can use in your HTML/components.
+ * 
+ * Available classes:
+ * - text-primary: Primary brand color text
+ * - text-secondary: Secondary brand color text
+ * - text-muted: Muted/secondary text (adapts to light/dark mode)
+ * - paper-title: Styling for publication titles
+ * - my-highlight: Gradient highlight effect
+ * - divider: Horizontal divider line
+ * - icon: Icon sizing and colors
+ * ============================================================================
+ */
+
+/* Text color utilities */
+@utility text-primary {
+	color: var(--color-primary);
+}
+
+@utility text-secondary {
+	color: var(--color-secondary);
+}
+
+@utility text-muted {
+	color: var(--color-text-muted);
+}
+
+/* Publication title styling */
+@utility paper-title {
+	color: var(--color-paper-title);
+	font-style: italic;
+}
+
+/* Gradient highlight effect (used for special text) */
+@utility my-highlight {
+	background-image: linear-gradient(
+		to right,
+		theme('colors.cyan.400'),
+		theme('colors.fuchsia.400')
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	padding: 0.125rem;
+	font-weight: 700;
+}
+
+/* Horizontal divider line */
+@utility divider {
+	margin-left: auto;
+	margin-right: auto;
+	height: 1px;
+	width: 50%;
+	background-color: var(--color-divider);
+}
+
+/* Icon styling - automatically adapts to light/dark mode */
+@utility icon {
+	height: 1.25rem;
+	width: 1.25rem;
+	fill: black;
+	stroke: currentColor;
+	color: black;
+}
+
+/* Larger icons on medium screens and up
+ * Note: Tailwind v4 @utility doesn't support responsive variants (md:icon),
+ * so we use a media query here. This is acceptable for responsive utilities.
+ */
+@media (min-width: 768px) {
+	.icon {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+}
+
+/* Dark mode icon colors */
+@variant dark {
+	.icon {
+		fill: white;
+		color: white;
+	}
+
+	.avatar {
+		border-color: theme('colors.zinc.600');
+	}
+}
+
+/* ============================================================================
+ * SECTION 9: MARKDOWN CONTENT STYLING (PROSE)
+ * ============================================================================
+ * Styles for markdown content pages (About, Team, Publications, etc.)
+ * 
+ * The "prose-custom" class is automatically applied to markdown content.
+ * These styles control how headings, paragraphs, links, code blocks, etc.
+ * appear in your content pages.
+ * 
+ * To customize markdown styling, modify the values below.
+ * ============================================================================
+ */
+
+/* Base prose styles - applied to all markdown content */
+@utility prose-custom {
+	/* Light mode colors for markdown elements */
+	--tw-prose-body: theme('colors.zinc.900');
+	--tw-prose-headings: theme('colors.zinc.900');
+	--tw-prose-lead: theme('colors.zinc.600');
+	--tw-prose-links: var(--color-primary);
+	--tw-prose-bold: theme('colors.zinc.900');
+	--tw-prose-counters: theme('colors.zinc.500');
+	--tw-prose-bullets: theme('colors.zinc.300');
+	--tw-prose-hr: theme('colors.zinc.200');
+	--tw-prose-quotes: theme('colors.zinc.900');
+	--tw-prose-quote-borders: theme('colors.zinc.300');
+	--tw-prose-captions: theme('colors.zinc.600');
+	--tw-prose-code: theme('colors.amber.500');
+	--tw-prose-pre-code: theme('colors.zinc.100');
+	--tw-prose-pre-bg: theme('colors.zinc.900');
+	--tw-prose-th-borders: theme('colors.zinc.300');
+	--tw-prose-td-borders: theme('colors.zinc.200');
+
+	/* Dark mode colors for markdown elements */
+	/* Note: Tailwind Typography plugin auto-generates --tw-prose-invert-* variables
+	 * from --tw-prose-* when --tw-prose-invert: 1 is set (see Section 12).
+	 * We only need to set --tw-prose-* variables here.
+	 */
+	@variant dark {
+		--tw-prose-body: color-mix(in srgb, theme('colors.zinc.300') 80%, theme('colors.zinc.400') 20%);
+		--tw-prose-headings: theme('colors.zinc.100');
+		--tw-prose-lead: theme('colors.zinc.400');
+		--tw-prose-links: theme('colors.sky.400');
+		--tw-prose-bold: theme('colors.zinc.200');
+		--tw-prose-counters: theme('colors.zinc.400');
+		--tw-prose-bullets: theme('colors.zinc.500');
+		--tw-prose-hr: theme('colors.zinc.700');
+		--tw-prose-quotes: theme('colors.zinc.300');
+		--tw-prose-quote-borders: theme('colors.zinc.600');
+		--tw-prose-captions: theme('colors.zinc.500');
+		--tw-prose-code: theme('colors.amber.400');
+		--tw-prose-pre-code: theme('colors.zinc.300');
+		--tw-prose-pre-bg: theme('colors.zinc.800');
+		--tw-prose-th-borders: theme('colors.zinc.600');
+		--tw-prose-td-borders: theme('colors.zinc.700');
+	}
+}
+
+/* ============================================================================
+ * SECTION 10: HEADING STYLES
+ * ============================================================================
+ * Custom styling for H1, H2, H3 headings in markdown content.
+ * 
+ * These use "clamp()" for responsive font sizes that scale smoothly
+ * between mobile and desktop.
+ * ============================================================================
+ */
+
+.page-content {
+	@apply flex flex-col md:gap-y-2;
+}
+
+/* H1 headings - centered by default */
+.prose-custom h1 {
+	text-align: center;
+	margin-bottom: 0.2rem;
+}
+
+/* H2 headings - section titles */
+.prose-custom h2 {
+	color: var(--color-h2);
+	margin-top: 1rem;
+	margin-bottom: .5rem;
+}
+
+.prose-custom h3 {
+    color: var(--color-h3);
+    margin-bottom: .5rem;
+}
+
+.prose-custom ul {
+	margin-bottom: 0rem;
+	margin-top: 0rem;
+}
+
+/* Remove margin bottom from p tags the preced a ul */
+.prose-custom p:has(+ ul) {
+	margin-bottom: 0.5rem;
+}
+
+/* Desktop only mods */
+@media (min-width: 768px) {
+	.prose-custom h1 {
+		margin-bottom: 1.2rem;
+	}
+	.prose-custom h2 {
+		margin-top: revert;
+	}
+}
+
+/* ============================================================================
+ * SECTION 11: CODE BLOCK STYLING
+ * ============================================================================
+ * Styles for inline code and code blocks in markdown content.
+ * ============================================================================
+ */
+
+/* Remove backticks from inline code */
+.prose-custom code::before,
+.prose-custom code::after {
+	content: '';
+}
+
+.prose-custom code {
+	font-style: normal;
+}
+
+/* ============================================================================
+ * SECTION 12: LINK STYLING
+ * ============================================================================
+ * Styles for links in markdown content.
+ * 
+ * Links use the primary brand color and show a dotted underline on hover.
+ * ============================================================================
+ */
+.prose-custom a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.prose-custom a:hover {
+	color: var(--color-secondary);
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-underline-offset: 4px;
+}
+
+/* Enable dark mode for prose plugin */
+@variant dark {
+	.prose {
+		--tw-prose-invert: 1;
+	}
+	.prose-custom a {
+		color: var(--color-primary-dark);
+	}
+	.prose-custom a:hover {
+		color: var(--color-secondary-dark);
+	}
+}
+
+/* ============================================================================
+ * SECTION 13: ANCHOR LINK STYLING
+ * ============================================================================
+ * Styles for anchor links on headings (used for table of contents navigation).
+ * These links appear when you hover over headings.
+ * ============================================================================
+ */
+.prose-custom .anchor-link {
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	display: inline;
+	width: 100%;
+}
+
+.prose-custom .anchor-link:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+.prose-custom h2 .anchor-link::before {
+	content: '# ';
+}
+
+.prose-custom h3 .anchor-link::before {
+	content: '# ';
+}

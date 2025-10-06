@@ -1,0 +1,43 @@
+---
+title: Connect
+description: Join the SciMinds research lab at UC San Diego. Opportunities for undergraduate students, graduate students, and post-doctoral researchers in social cognition and computational neuroscience.
+h1: Working with Us
+---
+
+<script>
+	import CallOut from '$lib/components/CallOut.svelte';
+</script>
+
+# Working with Us
+
+## Collaborators
+
+We're always interested in hearing from academic, public, and private sector folks who are exploring similar questions. Don't hesitate to reach out over [email](mailto:sciminds@ucsd.edu) if you think there could be exciting opportunities to work together!
+
+## Prospective applicants (all levels)
+
+There are numerous ways to get involved with the lab, but **easiest** way is to [submit this brief general interest form.](https://forms.gle/sySiJmAgMMiqfCTr7) We review responses on a rolling basis and do our best to get back to applicants as opportunities become available that align with your experience & interests.
+
+### Undergraduate 
+
+We ask all students to start as volunteer research-assistants based on your time availability. This way you can comfortably learn the ropes, hone your specific interests, and create opportunities to transition to full-time, independent, and senior thesis positions. Please indicate your interest and availability using the form above.
+
+### Graduate 
+
+**We are not recruiting for the 2026-2027 PhD Cycle.**  
+*Please see [UCSD Psychology's prospective student page](https://psychology.ucsd.edu/graduate-program/prospective-students/index.html) for other opportunities in the department.*
+
+<!--
+This is a great opportunity for anyone who thinks the research directions above sound interesting or has some related ideas they want to explore together. Pursuing a PhD is a big journey that can often looks pretty different from what you might expect. At the same time, the most rewarding parts of that journey differ from person-to-person and even from [*past*-you to future-you!]() You don’t need to have things figured out at this stage, but you do have to bring an uncompromising willingness to fail, learn, and <span class="my-highlight">grow</span>.
+-->
+
+### Post-doc / Research-Scientist
+
+While we don't currently have funding for a full-time position we're always interested in hearing from interested folks. There are always [unexpected opportunities](https://eshinjolly.com/2021/05/03/delightful-journey/) to explore new research directions, funding avenues, and learn/develop new methods together.
+
+<style>
+    @reference "tailwindcss";
+    h3 {
+        @apply my-0;
+    }
+</style>

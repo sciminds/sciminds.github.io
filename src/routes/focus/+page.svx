@@ -1,0 +1,28 @@
+---
+title: Focus
+description: The SciMinds research studio at UC San Diego focuses on computational social cognition, neuroscience, and the tools & methods that to help us understand social interactions
+h1: What is a research studio?
+---
+
+<script>
+	import CallOut from '$lib/components/CallOut.svelte';
+</script>
+
+# What we think about
+
+<CallOut content="How do social interactions and technology shape the ways we represent, remember, and share information together?" width="w-[96%] md:w-[82%]"></CallOut>
+
+How do you **represent** another person? Is it the way they **look**? The way they **sound**? Their **favorite** foods and hobbies? Your **common friends**? A meaningful **shared experience**? How does a **memorable social interaction** or **learning some juicy gossip** change the way you **think** about them? **Feel** about them? **Talk** about them?  
+
+To answer these questions our brains routinely perform multiple types of complex **social computations** - the process of <span class="my-highlight">building models of <em>other minds</em></span> and their <span class="my-highlight">dynamic <em>interactions & relationships</em></span> to predict and navigate our ambiguous social worlds.  
+
+At the SciMinds research studio our focus is unpacking this complexity by <span class="my-highlight">developing a naturalistic science of how minds interact.</span> We love taking an interdisciplinary approach by drawing inspiration from multiple areas of <span class="my-highlight">science, art, & engineering</span> such as: **social psychology** & **behavioral economics**; **computational cognitive neuroscience**; **computer-science & artificial intelligence**; **user-experience & design; and human-computer-interactions**.
+
+Check out some of our published and in-progress academic papers [here](/read) and some of the tools we're building [here](/build). If you're interested in working together feel free to check out our open positions [here](/connect).
+
+<style>
+	@reference "tailwindcss";
+	p {
+    	@apply md:my-2;
+	}
+</style>

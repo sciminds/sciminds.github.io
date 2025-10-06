@@ -1,0 +1,212 @@
+---
+title: Team
+description: Meet the SciMinds research team at UC San Diego. Our interdisciplinary group includes scientists, engineers, and researchers working on social cognition, neuroscience, and computational modeling.
+h1: Meet the Team
+---
+
+<script>
+  import CallOut from '$lib/components/CallOut.svelte';
+</script>
+
+# Meet the Team
+
+<CallOut content="We're scientists, engineers, artists, & hackers. Rethinking questions, to discover new answers." justify={false} width="w-[84%] md:w-[68%]"></CallOut>
+
+## Principal Investigator
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/eshin-jolly.jpg" alt="Eshin Jolly" />
+    <h3 class="name">Eshin Jolly</h3>
+  </div>
+  <div class="bio">
+
+Eshin was born in Dehradun, India and grew up around New York City & Long Island. He received a BA in Psychology & Cognitive Neuroscience with a Minor in Jazz Performance from the University of Rochester. He subsequently worked as lab manager at the [Harvard Social Cognitive and Affective Neuroscience Lab](https://jasonmitchell.fas.harvard.edu/) and completed his PhD and post-doc at Dartmouth College in the [Computational Social Affective Neuroscience Lab](https://cosanlab.com) with Luke Chang, and the [Functional Imaging & Naturalistic Neuroscience Lab](https://thefinnlab.github.io/) with Emily Finn. Before becoming a PI he worked in the private sector volunteering, founding & consulting with various civic-tech, ed-tech, and design startups & organizations. He's currently trying to figure out how to manage an academic research studio.
+
+<div class="links">
+
+[Website](https://eshinjolly.com) | [LinkedIn](https://www.linkedin.com/in/eshin-jolly-phd-164863a1/) | [Github](https://github.com/ejolly) 
+
+</div>
+
+  </div>
+</div>
+
+## Lab Coordinator
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/emma-seidfathi.jpg" alt="Emma Seidfathi" />
+    <h3 class="name">Emma Seidfathi</h3>
+  </div>
+  <div class="bio">
+
+Emma is from Los Angeles and earned her BA in Psychology from the University of Hawai'i at Mānoa, where she studied emotions in ethical decision-making. Her research explores how AI and large language models influence human creativity, cognitive growth, and agency, with interests in emotional architectures within human-AI systems and the role of VR/AR technologies in understanding emotion and cognition. She's preparing for doctoral work in affective computing and human-AI interaction, aiming to build technologies that support human and social wellbeing. Outside the lab, she's an avid traveler who has visited 17 countries (and counting!), a music enthusiast who plays piano and sings, and makes exceptional coffee thanks to years working in her family's coffee shop, open for over 30 years!
+
+<div class="links">
+
+[LinkedIn](https://www.linkedin.com/in/emma-seidfathi-36620a260) | [Github](https://github.com/emseidfathi)
+
+</div>
+
+  </div>
+</div>
+
+## Post-bac Research Scientist
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/justin-moran.jpg" alt="Justin Moran" />
+    <h3 class="name">Justin Moran</h3>
+  </div>
+  <div class="bio">
+
+Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He is currently a Research Scientist exploring ways to blend user experience, web design, and video games with experimental methods and education technology, and an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
+
+<div class="links">
+
+[Website](https://kyaneos.github.io/) | [LinkedIn](https://www.linkedin.com/in/thisisjustinmoran/) | [Github](http://github.com/kyaneos) 
+
+</div>
+
+  </div>
+</div>
+
+## PhD Students
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/jinwoo-lee.jpg" alt="Jinwoo Lee" />
+    <h3 class="name">Jinwoo Lee</h3>
+    <p class="subtitle">Psychology</p>
+  </div>
+  <div class="bio">
+
+Jinwoo studies the paradoxical nature of human emotion; its individuality and universality. He is particularly interested in answering questions such as: 1) How do the brain and body construct subjective feelings with individual idiosyncrasies? and 2) How can social interaction converge them into shareable representations? To this end, he combines naturalistic neuroimaging and computational approaches. Before joining SciMinds, he completed an MS in Brain and Cognitive Sciences and a BA in Psychology and Aesthetics at Seoul National University. Outside the lab, he enjoys DJing electronic music (e.g., ambient, techno, and IDM).
+
+<div class="links">
+
+[Website](https://jinwoo-lee.com) | [LinkedIn](https://www.linkedin.com/in/jinwoo-lee-017712178/) | [Github](https://github.com/jinw00-lee)
+
+</div>
+
+  </div>
+</div>
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/jacob-zimmerman.jpg" alt="Jacob Zimmerman" />
+    <h3 class="name">Jacob Zimmerman</h3>
+    <p class="subtitle">Psychology</p>
+  </div>
+  <div class="bio">
+
+Jacob (he/him) graduated from Pomona College with a B.A. in Cognitive Science and dual minors in Math and Psychology. His primary research interests include tools, collective cognition, and social decision-making and reasoning. Outside the lab, he enjoys writing [electronic music](https://soundcloud.com/jczimm), generative drawing, and cooking.
+
+<div class="links">
+
+[Website](https://jacobzm.com) | [LinkedIn](https://linkedin.com/in/jczimm) | [Github](https://github.com/jczimm)   
+
+</div>
+
+  </div>
+</div>
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/aaron-broukhim.jpg" alt="Aaron Broukhim" />
+    <h3 class="name">Aaron Broukhim</h3>
+    <p class="subtitle">Computer Science</p>
+  </div>
+  <div class="bio">
+
+My research interests lie at the intersection of machine-learning, human-computer interaction, & reinforcement-learning. Specifically, I work on finetuning conversational audio systems and the application of preference learning frameworks to varying domains and modalities. If you are interested in my work, feel free to reach out! I'm always happy to talk or collaborate on new projects. Aside from conducting research, you can find me and my dog at your local matcha & tea shop. My favorite is [Paru](https://paruteabar.com/).
+
+<div class="links">
+
+[Website](https://aabroukh.github.io/) | [LinkedIn](https://www.linkedin.com/in/aabroukh/) | [Github](https://github.com/aabroukh) 
+
+</div>
+
+  </div>
+</div>
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/chaolan-lin.jpg" alt="Chaolan Lin" />
+    <h3 class="name">Chaolan Lin</h3>
+    <p class="subtitle">Cognitive Science</p>
+  </div>
+  <div class="bio">
+
+Chaolan is a Ph.D. candidate in Cognitive Science at UC San Diego. She is interested in applying computational modeling to predict human behavior related to affective experiences. Her recent project explores human perception and trust in robots, collaborating with the robotics and neuroscience labs at UCSD. Outside of work, she enjoys taking her dog to the beach, visiting coffee shops, hiking, and paddleboarding.
+
+<div class="links">
+
+[Website](http://www.chaolanlin.com/) | [LinkedIn](https://www.linkedin.com/in/chaolanlin/) | [Github](https://github.com/Chaolanlin) 
+
+</div>
+
+  </div>
+</div>
+
+
+## Undergraduates
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/christian-lopez-castro.jpg" alt="Christian Lopez-Castro" />
+    <h3 class="name">Christian Lopez-Castro</h3>
+    <p class="subtitle">Psychology / Sociology</p>
+  </div>
+  <div class="bio">
+
+Christian was born and raised in El Salvador before moving to Los Angeles at 12 years old. He is a senior at UCSD double majoring in Social Psychology and Sociology, and a member of both departments' honors programs. His fascination with alliances and social strategy began long before he knew it was called social network analysis. This passion sparked when he first started watching Survivor, which he fully intends to win someday. He hopes to connect insights from different fields to better understand real-world group dynamics. Outside of lab, he enjoys playing Clash Royale, hanging with friends, and pretending that binge watching reality TV counts as research.
+
+  </div>
+</div>
+
+<style>
+  @reference "tailwindcss";
+
+  .team-member {
+    @apply mb-4 mt-4 flex md:mb-16 flex-col items-center md:gap-8 md:flex-row md:items-start leading-relaxed;
+  }
+
+  .links {
+    @apply md:my-2 text-center text-base md:text-start md:text-lg;
+  }
+
+  .links p {
+    @apply my-0!;
+  }
+
+  p:has(+.links) {
+    @apply mb-2!;
+  }
+
+  .avatar-section {
+    @apply flex flex-col items-center gap-2 flex-shrink-0 w-48 md:w-60 lg:w-72;
+  }
+
+  .name {
+    @apply text-xl lg:text-2xl font-bold mt-3 mb-0 whitespace-nowrap md:whitespace-normal;
+  }
+
+  .subtitle {
+    @apply text-base italic -mt-1 -mb-2 md:my-0;
+    color: var(--color-text-muted);
+  }
+
+  .bio {
+    @apply flex-1 md:self-start;
+  }
+
+  .bio p {
+    @apply md:my-0;
+  }
+  
+	.avatar {
+		@apply my-0 md:my-2 aspect-square w-48 md:w-64 rounded-xl border-2 border-zinc-300 object-cover object-center shadow-md;
+	}
+</style>
