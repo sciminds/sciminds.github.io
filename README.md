@@ -83,7 +83,8 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 - We also redirect the following domains:
   - `sci-minds.com`
   - `scimindsresearch.com`
-  
+- Privacy-preserving website-analytics are available at: https://tinyurl.com/lab-website-analytics 
+
 ### Manual
 - Deploying to `sciminds.ucsd.edu` requires locally building the site and `rsync`-ing the `build/` folder to our lab static web-server
 - `rsync build/ ucsd-website:/home/e3jolly/public_html/sciminds/`
@@ -94,3 +95,4 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 - [SvelteKit](https://svelte.dev/docs/kit/introduction) — App framework & routing
 - [Tailwind CSS](https://tailwindcss.com/docs) — Utility-first styling
 - [MDSvex](https://mdsvex.pngwn.io/docs) — Markdown in Svelte
+- [Umami](https://umami.is/docs)
