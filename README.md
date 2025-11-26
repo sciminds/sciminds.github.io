@@ -86,6 +86,7 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
   
 ### Manual
 - Deploying to `sciminds.ucsd.edu` requires locally building the site and `rsync`-ing the `build/` folder to our lab static web-server
+- `rsync build/ ucsd-website:/home/e3jolly/public_html/sciminds/`
 
 ## Reference Docs
 
