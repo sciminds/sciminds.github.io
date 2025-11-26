@@ -2,6 +2,7 @@ name: Deploy built site to GH pages
 on:
   push:
     branches: 'main'
+  workflow_dispatch:
 
 jobs:
   build_site:
