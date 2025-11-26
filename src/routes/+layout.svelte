@@ -8,8 +8,6 @@
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import HomeIcon from '$lib/components/HomeIcon.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
-	// import TypeWriter from '$lib/components/TypeWriter.svelte'
-	// import PublicationSearch from '$lib/components/PublicationSearch.svelte'
 
 	let { children } = $props();
 
@@ -51,12 +49,6 @@
 				})
 			: ''
 	);
-
-	//  Typewriter data
-	// const scimindsExpansions = [
-	// 	'The Science of Interacting Minds...',
-	// 	'Scientific Investigation of Multi-Agent Interactive Dynamics...'
-	// ];
 </script>
 
 <svelte:head>
@@ -100,7 +92,7 @@
 
 		<!-- Structured Data - Organization -->
 		{#if structuredData}
-			<svelte:element this={"script"} type="application/ld+json">
+			<svelte:element this={'script'} type="application/ld+json">
 				{structuredData}
 			</svelte:element>
 		{/if}
@@ -127,19 +119,3 @@
 
 	<Footer />
 </div>
-
-<!-- Typewriter component -->
-<!-- <div class="-mt-4 mb-2">
-	<TypeWriter
-		displayCursor={true}
-		phrases={scimindsExpansions}
-		initialDelay={0}
-		typeSpeed={15}
-		deleteSpeed={30}
-		fadeSpeed={1000}
-		deleteMode={'fade'}
-		firstPhrasePauseDuration={2000}
-		pauseDuration={2000}
-		class={'italic'}
-	/>
-</div> -->

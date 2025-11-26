@@ -35,6 +35,6 @@
 	}
 
 	.callout-content {
-		@apply rounded border-2 border-slate-400/20 px-2 py-1 text-center leading-snug font-medium hyphens-auto italic shadow-sm md:text-lg md:leading-relaxed md:shadow-md lg:text-xl md:px-3 md:py-2;
+		@apply rounded border-2 border-slate-400/20 px-2 py-1 text-center leading-snug font-medium hyphens-auto italic shadow-sm md:px-3 md:py-2 md:text-lg md:leading-relaxed md:shadow-md lg:text-xl;
 	}
 </style>

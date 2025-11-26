@@ -1,46 +1,47 @@
 <!--
-  SplitText - Animated text component that moves letters from a full name to spell an acronym
-  
-  Uses ResizeObserver + layout stability detection to prevent layout shift issues.
-  Waits for fonts to load and layout to stabilize before measuring positions.
+  SplitTextGSAP - Animated text component using GSAP
+  Moves letters from full name to spell an acronym using GSAP Timeline
 -->
 
 <script>
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/stores';
-	import { SvelteSet } from 'svelte/reactivity';
+	import { gsap } from 'gsap';
+	import { SplitText } from 'gsap/SplitText';
 
-	// Props with defaults
+	gsap.registerPlugin(SplitText);
+
+	// Props with defaults (matching current component)
 	let {
-		// Delay between each letter animation (ms)
-		staggerDelay = 200,
+		// Delay between each letter animation (seconds for GSAP)
+		staggerDelay = 0.2,
 
-		// How long each letter takes to fly (ms)
-		animationDuration = 250,
+		// How long each letter takes to fly (seconds)
+		animationDuration = 0.25,
 
-		// Delay for initial text appearance (ms)
-		characterStagger = 40,
+		// Delay for initial text appearance (seconds)
+		characterStagger = 0.04,
 
-		// Delay before clone animations start (ms) - allows full text to appear first
-		baseDelay = 400,
+		// Delay before clone animations start (seconds)
+		baseDelay = 0.4,
 
 		// Hide full text after animation completes
 		hideFullTextAfterAnimation = false,
 
-		// Semantic color for flying letters: 'primary' (sky-500), 'secondary' (rose-500), or 'accent' (cyan-400)
+		// Semantic color for flying letters
 		accentColor = 'primary',
 
-		// Force animation to play even if user prefers reduced motion (default: false for accessibility)
+		// Force animation to play even if user prefers reduced motion
 		forceAnimation = true,
 
-		// Delay between last clone landing and starting the transition (ms)
-		acronymTransitionDelay = 0,
+		// Delay between last clone landing and starting the transition (seconds)
+		acronymTransitionDelay = 0.5,
 
-		// How fast clones fade out (ms)
-		cloneFadeDuration = 0,
+		// How fast clones fade out (seconds)
+		cloneFadeDuration = 0.0,
 
-		// Overlap between clone fade-out and acronym fade-in (ms)
-		transitionOverlap = 200,
+		// Overlap between clone fade-out and acronym fade-in (seconds)
+		transitionOverlap = 0.5,
 
 		// Fine-tune clone final position - horizontal offset in pixels
 		cloneOffsetX = 0,
@@ -49,34 +50,57 @@
 		cloneOffsetY = 0,
 
 		// Multiply letter spacing by this factor to adjust bunching
-		cloneSpacingMultiplier = 1.12
+		cloneSpacingMultiplier = 1
 	} = $props();
 
 	const FULL = 'Social Computations & Interacting Minds Research Studio';
-	const ACR = 'SciMinds'; // case-sensitive display
+	const ACR = 'SciMinds';
+
+	// Split text into words for proper wrapping (preserves word boundaries)
+	// Returns array of { text, isSpace } objects
+	// Spaces are replaced with non-breaking spaces (\u00A0) to prevent collapse between inline-block elements
+	function splitIntoWords(text) {
+		const result = [];
+		const parts = text.split(/(\s+)/);
+
+		for (const part of parts) {
+			if (part.length > 0) {
+				const isSpace = /^\s+$/.test(part);
+				result.push({
+					text: isSpace ? part.replace(/ /g, '\u00A0') : part,
+					isSpace
+				});
+			}
+		}
+
+		return result;
+	}
 
 	// Per-letter adjustments for fine-tuning animation
 	const letterAdjustments = [
 		undefined, // S
 		undefined, // c
-		{ endX: -5 }, // i
-		{ endX: -3 }, // M
-		{ endX: 3 }, // i
+		undefined, // i
+		undefined, // M
+		undefined, // i
 		undefined, // n
 		undefined, // d
 		undefined // s
 	];
 
 	// Source character indices: which character from FULL text to use for each acronym letter
+	// Note: SplitText splits EVERY character including spaces, so indices must account for spaces
+	// Full text: "Social Computations & Interacting Minds Research Studio"
+	// DOM indices after SplitText (includes spaces): "Minds" is at [30,31,32,33,34]
 	const letterSourceIndices = [
 		0, // S -> first 'S' in "Social"
-		7, // c
-		20, // i
-		30, // M -> first 'M' in "Minds"
-		33, // i
-		35, // n
-		37, // d
-		42 // s
+		2, // c -> from "Social"
+		3, // i -> from "Social"
+		30, // M -> first 'M' in "Minds" (DOM index, not string index)
+		31, // i -> from "Minds"
+		32, // n -> from "Minds"
+		33, // d -> from "Minds"
+		34 // s -> from "Minds"
 	];
 
 	// Default values for letter adjustments
@@ -90,224 +114,118 @@
 	};
 
 	// State
-	let stage = $state();
+	let stageEl = $state();
 	let fullEl = $state();
 	let acrEl = $state();
-	let isReady = $state(false);
-	let hideFullText = $state(false);
-	let showAcronym = $state(false);
-	let fadeClones = $state(false);
-	let clones = $state([]);
-	let visibleCloneIndices = $state(new Set()); // Track which clone indices should be visible
-	let cloneTimeouts = $state([]); // Store timeout IDs for cleanup
-	let resizeObserver = $state(null);
-	let stabilityCheckInterval = $state(null);
+	let timeline = $state(null);
+	let sourceSplit = $state(null);
+	let targetSplit = $state(null);
+	let isInitializing = $state(false);
 
-	// Simple splitter for template injection
-	const split = (s) => [...s].map((ch, i) => ({ ch, i }));
-
-	// Split text into words while preserving spaces for proper wrapping
-	const splitIntoWords = (text) => {
-		const words = [];
-		let currentWord = [];
-		let charIndex = 0;
-
-		for (let i = 0; i < text.length; i++) {
-			const ch = text[i];
-			if (ch === ' ') {
-				if (currentWord.length > 0) {
-					words.push({ chars: currentWord, isSpace: false });
-					currentWord = [];
-				}
-				words.push({
-					chars: [{ ch: ' ', i: charIndex }],
-					isSpace: true
-				});
-				charIndex++;
-			} else {
-				currentWord.push({ ch, i: charIndex });
-				charIndex++;
-			}
+	async function initAnimation() {
+		// Prevent multiple simultaneous calls
+		if (isInitializing) return;
+		isInitializing = true;
+		// Reset any existing animation
+		if (timeline) {
+			timeline.kill();
+			timeline = null;
 		}
-		if (currentWord.length > 0) {
-			words.push({ chars: currentWord, isSpace: false });
+		if (sourceSplit) {
+			sourceSplit.revert();
+			sourceSplit = null;
 		}
-		return words;
-	};
+		if (targetSplit) {
+			targetSplit.revert();
+			targetSplit = null;
+		}
 
-	/**
-	 * Wait for layout to stabilize by checking if element positions stop changing
-	 * Returns a promise that resolves when layout is stable
-	 */
-	async function waitForLayoutStability() {
-		return new Promise((resolve) => {
-			if (!fullEl || !acrEl || !stage) {
-				resolve();
-				return;
-			}
+		if (!fullEl || !acrEl || !stageEl) {
+			isInitializing = false;
+			return;
+		}
 
-			let stableCount = 0;
-			const STABILITY_THRESHOLD = 3; // Must be stable for 3 consecutive frames
-			const POSITION_THRESHOLD = 1; // Position change tolerance in pixels
-			let lastPositions = null;
-
-			const checkStability = () => {
-				const fullRect = fullEl.getBoundingClientRect();
-				const acrRect = acrEl.getBoundingClientRect();
-				const stageRect = stage.getBoundingClientRect();
-
-				// Check if elements have valid dimensions
-				if (
-					fullRect.width === 0 ||
-					fullRect.height === 0 ||
-					acrRect.width === 0 ||
-					acrRect.height === 0 ||
-					stageRect.width === 0 ||
-					stageRect.height === 0
-				) {
-					// Elements not ready yet, keep checking
-					requestAnimationFrame(checkStability);
-					return;
-				}
-
-				// First measurement - store positions
-				if (lastPositions === null) {
-					lastPositions = {
-						full: { top: fullRect.top, left: fullRect.left, width: fullRect.width },
-						acr: { top: acrRect.top, left: acrRect.left, width: acrRect.width },
-						stage: { top: stageRect.top, left: stageRect.left }
-					};
-					requestAnimationFrame(checkStability);
-					return;
-				}
-
-				// Check if positions changed significantly
-				const fullChanged =
-					Math.abs(fullRect.top - lastPositions.full.top) > POSITION_THRESHOLD ||
-					Math.abs(fullRect.left - lastPositions.full.left) > POSITION_THRESHOLD ||
-					Math.abs(fullRect.width - lastPositions.full.width) > POSITION_THRESHOLD;
-
-				const acrChanged =
-					Math.abs(acrRect.top - lastPositions.acr.top) > POSITION_THRESHOLD ||
-					Math.abs(acrRect.left - lastPositions.acr.left) > POSITION_THRESHOLD ||
-					Math.abs(acrRect.width - lastPositions.acr.width) > POSITION_THRESHOLD;
-
-				if (!fullChanged && !acrChanged) {
-					stableCount++;
-					if (stableCount >= STABILITY_THRESHOLD) {
-						// Layout is stable!
-						resolve();
-						return;
-					}
-				} else {
-					// Positions changed, reset stability counter
-					stableCount = 0;
-					lastPositions = {
-						full: { top: fullRect.top, left: fullRect.left, width: fullRect.width },
-						acr: { top: acrRect.top, left: acrRect.left, width: acrRect.width },
-						stage: { top: stageRect.top, left: stageRect.left }
-					};
-				}
-
-				requestAnimationFrame(checkStability);
-			};
-
-			// Start checking
-			checkStability();
-		});
-	}
-
-	/**
-	 * Initialize the animation after layout is stable
-	 */
-	async function initializeAnimation() {
-		// Reset state IMMEDIATELY (before any async operations)
-		isReady = false;
-		hideFullText = false;
-		showAcronym = false;
-		fadeClones = false;
-		clones = [];
-		visibleCloneIndices = new Set();
-
-		// Clear any existing clone timeouts
-		cloneTimeouts.forEach((timeoutId) => {
-			if (timeoutId) clearTimeout(timeoutId);
-		});
-		cloneTimeouts = [];
-
-		if (!fullEl || !acrEl || !stage) return;
-
-		// Check for reduced motion preference IMMEDIATELY (before any async operations)
-		// This prevents any flash of clones when reduced motion is enabled
+		// Check reduced motion preference
 		const reduce =
 			!forceAnimation && window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
 
-		// If reduced motion, skip all async operations and show acronym immediately
 		if (reduce) {
-			isReady = true;
-			showAcronym = true;
-			clones = [];
-			visibleCloneIndices = new Set();
-			cloneTimeouts = [];
+			// Skip animation, show acronym immediately
+			gsap.set(acrEl, { opacity: 1 });
+			isInitializing = false;
 			return;
 		}
 
-		// Step 1: Wait for fonts to load
+		// Wait for fonts and layout
 		if (document.fonts && document.fonts.ready) {
 			await document.fonts.ready;
 		}
-
-		// Step 2: Wait for DOM to be ready
 		await tick();
 		await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
 
-		// Step 3: Wait for layout to stabilize
-		await waitForLayoutStability();
+		// Split text using GSAP SplitText plugin
+		// Use 'chars,words' to preserve word boundaries for proper wrapping
+		sourceSplit = new SplitText(fullEl, { type: 'chars,words' });
+		targetSplit = new SplitText(acrEl, { type: 'chars' });
 
-		// Step 4: Now measure positions (layout is stable, reduced motion check passed)
-		// Collect character spans
-		const fullChars = Array.from(fullEl.querySelectorAll('[data-ch]'));
-		const acrChars = Array.from(acrEl.querySelectorAll('[data-ch]'));
-
-		if (fullChars.length === 0 || acrChars.length === 0) {
-			// Elements not ready, skip animation
-			return;
+		// Flatten chars array (chars may be nested within words)
+		// For 'chars,words' type, GSAP creates words[] with nested chars
+		// We need to flatten all character elements in order
+		let sourceChars = [];
+		if (sourceSplit.chars && sourceSplit.chars.length > 0) {
+			// If chars are already flattened, use them
+			sourceChars = sourceSplit.chars;
+		} else if (sourceSplit.words && sourceSplit.words.length > 0) {
+			// Otherwise, flatten from words
+			sourceChars = sourceSplit.words.flatMap((word) => {
+				// Each word element contains character elements as children
+				return Array.from(word.children || []);
+			});
 		}
 
-		// Map acronym letters to source letters in full text
-		const used = new SvelteSet();
-		const pairs = [];
-		acrChars.forEach((dst, acrIdx) => {
-			const t = dst.dataset.ch;
-			let srcIdx;
-
-			if (letterSourceIndices[acrIdx] !== undefined) {
-				srcIdx = letterSourceIndices[acrIdx];
-			} else {
-				srcIdx = fullChars.findIndex(
-					(el, idx) => !used.has(idx) && el.dataset.ch.toLowerCase() === t.toLowerCase()
-				);
-				if (srcIdx === -1)
-					srcIdx = fullChars.findIndex((el, idx) => !used.has(idx) && el.dataset.ch !== ' ');
-			}
-
-			used.add(srcIdx);
-			pairs.push({ src: fullChars[srcIdx], dst, ch: dst.dataset.ch });
+		// Measure positions
+		const stageRect = stageEl.getBoundingClientRect();
+		const sourcePositions = sourceChars.map((el) => {
+			const rect = el.getBoundingClientRect();
+			return {
+				x: rect.left - stageRect.left,
+				y: rect.top - stageRect.top,
+				width: rect.width,
+				height: rect.height
+			};
 		});
 
-		// Measure positions (layout is now stable)
-		const sRect = stage.getBoundingClientRect();
+		const targetPositions = targetSplit.chars.map((el) => {
+			const rect = el.getBoundingClientRect();
+			const style = window.getComputedStyle(el);
+			return {
+				x: rect.left - stageRect.left,
+				y: rect.top - stageRect.top,
+				width: rect.width,
+				height: rect.height,
+				fontSize: style.fontSize,
+				lineHeight: style.lineHeight,
+				fontWeight: style.fontWeight,
+				letterSpacing: style.letterSpacing
+			};
+		});
 
-		// Reset visible clone indices - start with none visible
-		visibleCloneIndices = new Set();
-		cloneTimeouts = [];
+		// Create GSAP timeline
+		timeline = gsap.timeline();
 
-		clones = pairs.map(({ src, dst, ch }, idx) => {
-			const a = src.getBoundingClientRect();
-			const b = dst.getBoundingClientRect();
-			const dstStyle = window.getComputedStyle(dst);
+		// Step 1: Fade in full text (staggered)
+		timeline.from(sourceChars, {
+			opacity: 0,
+			duration: 0.38,
+			stagger: characterStagger,
+			ease: 'power2.out'
+		});
 
-			const adj = letterAdjustments[idx] || {};
+		// Step 2: Create clones and animate them
+		const clones = [];
+		letterSourceIndices.forEach((srcIdx, acrIdx) => {
+			const sourceChar = sourceChars[srcIdx];
+			const adj = letterAdjustments[acrIdx] || {};
 			const startScale = adj.startScale ?? defaultAdjustment.startScale;
 			const endScale = adj.endScale ?? defaultAdjustment.endScale;
 			const startX = adj.startX ?? defaultAdjustment.startX;
@@ -315,15 +233,36 @@
 			const startY = adj.startY ?? defaultAdjustment.startY;
 			const endY = adj.endY ?? defaultAdjustment.endY;
 
-			// Calculate base displacement
-			let dx = b.left - a.left;
-			let dy = b.top - a.top;
+			// Create clone at source position
+			const clone = sourceChar.cloneNode(true);
+			clone.style.position = 'absolute';
+			clone.style.left = sourcePositions[srcIdx].x + startX + 'px';
+			clone.style.top = sourcePositions[srcIdx].y + startY + 'px';
+			clone.style.color = `var(--color-${accentColor})`;
+			clone.style.pointerEvents = 'none';
+			clone.setAttribute('aria-hidden', 'true');
+
+			// Apply target styling to clone
+			const targetStyle = targetPositions[acrIdx];
+			clone.style.fontSize = targetStyle.fontSize;
+			clone.style.lineHeight = targetStyle.lineHeight;
+			clone.style.fontWeight = targetStyle.fontWeight;
+			clone.style.letterSpacing = targetStyle.letterSpacing;
+
+			// Direct DOM manipulation required for GSAP clone animations
+			// eslint-disable-next-line svelte/no-dom-manipulating
+			stageEl.appendChild(clone);
+			clones.push(clone);
+
+			// Calculate delta (GSAP will handle the transform)
+			let dx = targetPositions[acrIdx].x - sourcePositions[srcIdx].x;
+			let dy = targetPositions[acrIdx].y - sourcePositions[srcIdx].y;
 
 			// Apply spacing multiplier
 			if (cloneSpacingMultiplier !== 1.0) {
-				const centerIdx = (pairs.length - 1) / 2;
-				const offsetFromCenter = idx - centerIdx;
-				dx += offsetFromCenter * b.width * (cloneSpacingMultiplier - 1.0);
+				const centerIdx = (letterSourceIndices.length - 1) / 2;
+				const offsetFromCenter = acrIdx - centerIdx;
+				dx += offsetFromCenter * targetStyle.width * (cloneSpacingMultiplier - 1.0);
 			}
 
 			// Apply manual offsets
@@ -332,232 +271,111 @@
 			dx += endX;
 			dy += endY;
 
-			return {
-				ch,
-				left: a.left - sRect.left + startX,
-				top: a.top - sRect.top + startY,
-				dx,
-				dy,
-				w: b.width,
-				h: b.height,
-				fontSize: dstStyle.fontSize,
-				lineHeight: dstStyle.lineHeight,
-				fontWeight: dstStyle.fontWeight,
-				letterSpacing: dstStyle.letterSpacing,
-				startScale,
-				endScale
-			};
+			// GSAP handles: transform application, timing, easing, cleanup
+			timeline.fromTo(
+				clone,
+				{ opacity: 0, scale: startScale, x: 0, y: 0 },
+				{
+					opacity: 1,
+					x: dx,
+					y: dy,
+					scale: endScale,
+					duration: animationDuration,
+					ease: 'power2.out'
+				},
+				baseDelay + acrIdx * staggerDelay
+			);
 		});
 
-		// Trigger initial reveal
-		isReady = true;
-
-		// Schedule each clone to appear at its animation delay time
-		clones.forEach((_, idx) => {
-			const delay = baseDelay + idx * staggerDelay;
-			const timeoutId = setTimeout(() => {
-				visibleCloneIndices = new Set([...visibleCloneIndices, idx]);
-			}, delay);
-			cloneTimeouts.push(timeoutId);
-		});
-
-		// Calculate timing for clone animations
-		const lastCloneLanding = baseDelay + (clones.length - 1) * staggerDelay + animationDuration;
-		const cloneFadeStart = lastCloneLanding + acronymTransitionDelay;
+		// Step 3: Fade out clones and fade in acronym
+		const lastCloneTime =
+			baseDelay + (letterSourceIndices.length - 1) * staggerDelay + animationDuration;
+		const cloneFadeStart = lastCloneTime + acronymTransitionDelay;
 		const acronymAppearTime = cloneFadeStart + cloneFadeDuration - transitionOverlap;
 
-		setTimeout(() => {
-			fadeClones = true;
-		}, cloneFadeStart);
+		timeline.to(
+			clones,
+			{
+				opacity: 0,
+				duration: cloneFadeDuration,
+				ease: 'power2.out'
+			},
+			cloneFadeStart
+		);
 
-		setTimeout(() => {
-			showAcronym = true;
-		}, acronymAppearTime);
+		timeline.to(
+			acrEl,
+			{
+				opacity: 1,
+				duration: 0.5,
+				ease: 'power2.out'
+			},
+			acronymAppearTime
+		);
 
+		// Cleanup clones
+		timeline.call(
+			() => {
+				clones.forEach((clone) => clone.remove());
+			},
+			null,
+			cloneFadeStart + cloneFadeDuration
+		);
+
+		// Hide full text if requested
 		if (hideFullTextAfterAnimation) {
-			setTimeout(() => {
-				hideFullText = true;
-			}, acronymAppearTime);
+			timeline.to(
+				fullEl,
+				{
+					opacity: 0,
+					duration: 0.3,
+					ease: 'power2.out'
+				},
+				acronymAppearTime
+			);
 		}
+
+		isInitializing = false;
 	}
 
-	// Initialize on mount
 	onMount(() => {
-		initializeAnimation();
+		initAnimation();
 
-		// Cleanup function
 		return () => {
-			// Clear clone timeouts
-			cloneTimeouts.forEach((timeoutId) => {
-				if (timeoutId) clearTimeout(timeoutId);
-			});
-			if (resizeObserver) {
-				resizeObserver.disconnect();
-			}
-			if (stabilityCheckInterval) {
-				clearInterval(stabilityCheckInterval);
-			}
+			if (timeline) timeline.kill();
+			if (sourceSplit) sourceSplit.revert();
+			if (targetSplit) targetSplit.revert();
 		};
 	});
 
 	// Reset animation when navigating to home page
 	$effect(() => {
-		if ($page.url.pathname === '/' && fullEl && acrEl && stage) {
-			// Reset state IMMEDIATELY (no delay) to prevent any flash
-			clones = [];
-			visibleCloneIndices = new Set();
-			cloneTimeouts.forEach((timeoutId) => {
-				if (timeoutId) clearTimeout(timeoutId);
-			});
-			cloneTimeouts = [];
-
-			// Then initialize animation
-			initializeAnimation();
+		// Only run if on home page, elements are ready, and not already initializing
+		if ($page.url.pathname === '/' && stageEl && fullEl && acrEl && !isInitializing && !timeline) {
+			initAnimation();
 		}
 	});
 </script>
 
-<!-- CONTAINER STYLING: Customize spacing, max-width, padding -->
-<section
-	bind:this={stage}
-	data-ready={isReady}
-	data-force-animation={forceAnimation}
-	class="relative mx-auto max-w-5xl px-6 py-0"
-	style="contain: layout;"
->
+<section bind:this={stageEl} class="relative mx-auto max-w-5xl px-6 py-0" style="contain: layout;">
 	<!-- FULL TEXT STYLING: Customize size, weight, spacing, color -->
 	<h1
-		class="text-center leading-relaxed font-semibold tracking-tighter text-balance wrap-break-word"
+		class="text-center leading-relaxed font-semibold tracking-tighter"
 		style="font-size: clamp(1.5rem, 4vw, 1.875rem);"
 	>
-		<span
-			bind:this={fullEl}
-			class="inline-block transition-opacity duration-300 ease-out"
-			class:opacity-0={!isReady || hideFullText}
-			class:opacity-100={isReady && !hideFullText}
-			aria-label={FULL}
-		>
-			{#each splitIntoWords(FULL) as word, wordIdx (wordIdx)}
-				<span class="inline-block whitespace-nowrap">
-					{#each word.chars as { ch, i } (i)}
-						<span
-							data-ch={ch === ' ' ? ' ' : ch}
-							class="inline-block will-change-transform select-none"
-							style="--stagger:{i * characterStagger}ms">{ch === ' ' ? '\u00A0' : ch}</span
-						>
-					{/each}
-				</span>
+		<span bind:this={fullEl} class="inline-block" aria-label={FULL}>
+			{#each splitIntoWords(FULL) as part, idx (idx)}
+				{part.text}
 			{/each}
 		</span>
 	</h1>
 
 	<!-- ACRONYM STYLING: Customize size, weight, letter spacing, color -->
-	<div class="mt-6 text-center">
+	<div class="mt-6 text-center font-medium">
 		<h2 class="text-primary" style="font-size: clamp(1.875rem, 8vw, 3.75rem);">
-			<span
-				bind:this={acrEl}
-				class="inline-block transition-opacity duration-500 ease-out"
-				class:opacity-0={!showAcronym}
-				class:opacity-100={showAcronym}
-				aria-label={ACR}
-			>
-				{#each split(ACR) as { ch, i } (i)}
-					<span data-ch={ch} class="inline-block will-change-transform select-none">{ch}</span>
-				{/each}
+			<span bind:this={acrEl} class="inline-block opacity-0" aria-label={ACR}>
+				{ACR}
 			</span>
 		</h2>
 	</div>
-
-	<!-- ANIMATED CLONES: Customize color, effects (glow, shadow, etc.) -->
-	{#if clones.length}
-		{#each clones as c, i (i)}
-			{#if visibleCloneIndices.has(i)}
-				<span
-					aria-hidden="true"
-					class="clone animate-pluck pointer-events-none absolute"
-					class:fade-out={fadeClones}
-					style="
-						left:{c.left}px; top:{c.top}px; width:{c.w}px; height:{c.h}px;
-						font-size:{c.fontSize}; line-height:{c.lineHeight};
-						font-weight:{c.fontWeight}; letter-spacing:{c.letterSpacing};
-						--dx:{c.dx}px; --dy:{c.dy}px; --i:{i};
-						--start-scale:{c.startScale}; --end-scale:{c.endScale};
-						--delay:0ms;
-						--fade-duration:{cloneFadeDuration}ms;
-						animation-duration: {animationDuration}ms;
-						color: var(--color-{accentColor});
-					">{c.ch}</span
-				>
-			{/if}
-		{/each}
-	{/if}
 </section>
-
-<style>
-	/* CLONE BASE STYLING: Customize appearance of flying letters */
-	.clone {
-		display: inline-block;
-		text-align: center;
-		will-change: transform, opacity, filter;
-		transform: translate(0, 0) scale(var(--start-scale, 0.5));
-		opacity: 0;
-		animation-delay: var(--delay, 0ms);
-	}
-
-	/* CLONE FADE-OUT: Triggered when all clones have landed */
-	.clone.fade-out {
-		opacity: 0 !important;
-		transition: opacity var(--fade-duration, 300ms) ease-out !important;
-	}
-
-	/* CSS-only pluck keyframes using custom properties */
-	@keyframes pluck {
-		0% {
-			transform: translate(0px, 0px) scale(var(--start-scale, 0.5));
-			opacity: 1;
-			filter: blur(0px);
-		}
-		60% {
-			transform: translate(calc(var(--dx) * 0.9), calc(var(--dy) * 0.9))
-				scale(calc(var(--start-scale, 0.5) + (var(--end-scale, 1) - var(--start-scale, 0.5)) * 0.6));
-		}
-		100% {
-			transform: translate(var(--dx), var(--dy)) scale(var(--end-scale, 1));
-			opacity: 1;
-			filter: blur(0px);
-		}
-	}
-
-	.animate-pluck {
-		animation-name: pluck;
-		animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
-		animation-fill-mode: forwards;
-	}
-
-	/* Stagger animation for initial text appearance */
-	[data-ch] {
-		animation: fadeUp 380ms ease-out both;
-		animation-delay: var(--stagger, 0ms);
-	}
-
-	@keyframes fadeUp {
-		from {
-			opacity: 0;
-			transform: translateY(0);
-			filter: blur(0);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-			filter: blur(0);
-		}
-	}
-
-	/* Respect reduced motion preferences (unless forceAnimation is true) */
-	@media (prefers-reduced-motion: reduce) {
-		section:not([data-force-animation='true']) .animate-pluck,
-		section:not([data-force-animation='true']) [data-ch] {
-			animation: none !important;
-		}
-	}
-</style>
