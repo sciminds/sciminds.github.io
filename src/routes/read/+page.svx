@@ -21,100 +21,81 @@ Jolly, E., Sadhukha, S., Iqbal, M., Chen, J. & Chang, L.J. (in prep). <span clas
 
 ## 2025
 
-Le, K.\* Jadhav, A.\* & Jolly, E. (2025). <span class="paper-title">Statistical Intuitions for Social Scientists</span>.  
-\*Equal contribution  
-[open course materials](https://stat-intuitions.com/)  
+Yang, M. Chen, P.A., Brandt, A.M., Sadhukhka, S., Farrens, M., Jolly, E., Chang, L.J. (under review). <span class="paper-title">Structured Neural Variability from Repeated Naturalistic Video Watching Experiences</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.11.07.687258v1.abstract)
 
-Varrier, R.S., Su, Z. Liang, Q., Benson, T. Jolly, E., & Finn, E.S. (under review). <span class="paper-title">Shared and individual tuning curves for social vision</span>. *bioRxiv.*  
-[preprint](https://www.biorxiv.org/content/10.1101/2025.01.19.633772v1)
+Kwon, D., Jolly, E., Chang, L.J, Shim, W.M. (2025). <span class="paper-title">Neural representation of social relationship graphs through multidimensional modeling dynamic social interactions</span>. *Ccneuro.* [manuscript](https://2025.ccneuro.org/abstract_pdf/Kwon_2025_Neural_Representation_Social_Relationship_Graphs_Multidimensional.pdf)
 
-Jolly, E., Sadhukha, S., Iqbal, M., Molani, Z., Walsh, T.M., Manning, J.R., & Chang, L.J. (under revision). <span class="paper-title">People are represented and remembered through their relationships with others</span>. *PsyArxiv.*  
-[preprint](https://psyarxiv.com/bw9r2)
+Varrier, R.S., Su, Z. Liang, Q., Benson, T. Jolly, E., & Finn, E.S. (under review). <span class="paper-title">Shared and individual tuning curves for social vision</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.01.19.633772v1)
+
+Le, K.\* Jadhav, A.\* & Jolly, E. (2025). <span class="paper-title">Statistical Intuitions for Social Scientists</span>. [open course materials](https://stat-intuitions.com/)  
 
 ## 2024
 
 Gao, X., Jolly, E., Yu, H., Liu, H., Zhou, X., & Chang, L.J. (2024). <span class="paper-title">The psychological, computational, and neural foundations of indebtedness</span>. *Nature Communications*.  
 [manuscript](https://www.nature.com/articles/s41467-023-44286-9.epdf?sharing_token=NIf7F6ZBWfJIfbGC8ILBZdRgN0jAjWel9jnR3ZoTv0OnNr1VgUao8PGix03Ez_tPL329X4MVbjab8h0_bmcT6IcqcyihbqbYPkQGhGb8nzxaJBfs-C62qJB_ofzGcLQq2UJ8ibYvEAPQ5P2iKoh6bTqwsIP5OEmcEzy2Wyp96C4%3D)
 
+Jolly, E., Sadhukha, S., Iqbal, M., Molani, Z., Walsh, T.M., Manning, J.R., & Chang, L.J. (under revision). <span class="paper-title">People are represented and remembered through their relationships with others</span>. *PsyArxiv.*  
+[preprint](https://psyarxiv.com/bw9r2)
+
 ## 2023
 
-Jolly, E.\*, Cheong, J.H.\*, Xie, T.\*, Byrne, S. Kenny, M., & Chang, L.J. (2023). <span class="paper-title">Py-Feat: Python Facial Expression Analysis Toolbox</span>. *Affective Science*.  
-\*Equal contribution  
-[manuscript](https://doi.org/10.1007/s42761-023-00191-4) | [toolbox](https://py-feat.org/)  
+Jolly, E.\*, Cheong, J.H.\*, Xie, T.\*, Byrne, S. Kenny, M., & Chang, L.J. (2023). <span class="paper-title">Py-Feat: Python Facial Expression Analysis Toolbox</span>. *Affective Science*.  [manuscript](https://doi.org/10.1007/s42761-023-00191-4) | [toolbox](https://py-feat.org/)  
 
 ## 2022
 
-Jolly, E., Farrens, M., Greenstein, N., Eisenbarth, H., Reddan, M.C., Andrew, E., Wager, T.D., & Chang, L.J. (2022). <span class="paper-title">Recovering individual emotional states from sparse ratings using collaborative filtering</span>. *Affective Science*.  
+Jolly, E., Farrens, M., Greenstein, N., Eisenbarth, H., Reddan, M.C., Andrew, E., Wager, T.D., & Chang, L.J. (2022). <span class="paper-title">Recovering individual emotional states from sparse ratings using collaborative filtering</span>. *Affective Science*. 
 [manuscript](https://link.springer.com/article/10.1007/s42761-022-00161-2) | [data & code](https://github.com/cosanlab/collab_filter) | [toolbox](https://cosanlab.github.io/neighbors/)
 
 ## 2021
 
-Jolly, E. & Chang, L.J. (2021). <span class="paper-title">Multivariate spatial feature selection in fMRI</span>. *Social Cognitive and Affective Neuroscience* *16(8)*, 795-806.  
-[manuscript](https://academic.oup.com/scan/article/16/8/795/6121195)
+Jolly, E. & Chang, L.J. (2021). <span class="paper-title">Multivariate spatial feature selection in fMRI</span>. *Social Cognitive and Affective Neuroscience* *16(8)*, 795-806. [manuscript](https://academic.oup.com/scan/article/16/8/795/6121195)
 
-Jolly, E. & Chang, L.J. (2021). <span class="paper-title">Gossip drives vicarious learning and facilitates social connections</span>. *Current Biology* *31*, 1-11.   
-[manuscript](https://www.sciencedirect.com/science/article/pii/S0960982221004632) | [data & code](https://osf.io/c9mdx/)  
+Jolly, E. & Chang, L.J. (2021). <span class="paper-title">Gossip drives vicarious learning and facilitates social connections</span>. *Current Biology* *31*, 1-11. [manuscript](https://www.sciencedirect.com/science/article/pii/S0960982221004632) | [data & code](https://osf.io/c9mdx/)  
 Coverage: [New York Times](https://www.nytimes.com/2021/05/28/style/gossip-a-bit.html), [VPR News](https://www.vpr.org/vpr-news/2021-05-13/gossips-good-side-dartmouth-researcher-finds-sharing-it-aids-learning-boosts-cooperation#stream/0), [PNAS Journal Club](https://blog.pnas.org/2021/05/gossip-drives-social-bonding-and-helps-people-learn/)
 
-Chang, L.J., Jolly, E., Cheong, J.H., Rapuano, K., Greenstein, N., Chen, P.A., & Manning, J.R. (2021). <span class="paper-title">Endogenous variation in ventromedial prefrontal cortex state dynamics during naturalistic viewing reflects affective experience</span>. *Science Advances* *7(17)*, 1-17.  
-[manuscript](https://doi.org/10.1126/sciadv.abf7129) | [data & code](https://github.com/cosanlab/vmPFC_dynamics)
+Chang, L.J., Jolly, E., Cheong, J.H., Rapuano, K., Greenstein, N., Chen, P.A., & Manning, J.R. (2021). <span class="paper-title">Endogenous variation in ventromedial prefrontal cortex state dynamics during naturalistic viewing reflects affective experience</span>. *Science Advances* *7(17)*, 1-17. [manuscript](https://doi.org/10.1126/sciadv.abf7129) | [data & code](https://github.com/cosanlab/vmPFC_dynamics)
 
 ## 2020
 
-Jolly, E.\*, Sadhukha, S.\*, & Chang, L.J. (2020). <span class="paper-title">Response to Lynch et al: On measuring head motion and effects of head molds during fMRI</span>. *NeuroImage* 117484.  
-\*Equal contribution  
-[manuscript](https://www.sciencedirect.com/science/article/pii/S1053811920309691?via%3Dihub) | [data & code](https://github.com/cosanlab/headcase)
+Jolly, E.\*, Sadhukha, S.\*, & Chang, L.J. (2020). <span class="paper-title">Response to Lynch et al: On measuring head motion and effects of head molds during fMRI</span>. *NeuroImage* 117484. [manuscript](https://www.sciencedirect.com/science/article/pii/S1053811920309691?via%3Dihub) | [data & code](https://github.com/cosanlab/headcase)
 
-Jolly, E.\*, Sadhukha, S.\*, & Chang, L.J. (2020). <span class="paper-title">Custom-molded headcases have limited efficacy in reducing head motion during naturalistic fMRI experiments</span>. *NeuroImage* 117207.  
-\*Equal contribution  
-[manuscript](https://www.sciencedirect.com/science/article/pii/S1053811920306935) | [data & code](https://github.com/cosanlab/headcase)
+Jolly, E.\*, Sadhukha, S.\*, & Chang, L.J. (2020). <span class="paper-title">Custom-molded headcases have limited efficacy in reducing head motion during naturalistic fMRI experiments</span>. *NeuroImage* 117207. [manuscript](https://www.sciencedirect.com/science/article/pii/S1053811920306935) | [data & code](https://github.com/cosanlab/headcase)
 
-Chen, P.H.A., Jolly, E., Cheong, J.H., & Chang, L.J. (2020). <span class="paper-title">Intersubject representational similarity analysis reveals individual variations in affective experience when watching erotic movies</span>. *NeuroImage* 116851.  
-[manuscript](https://reader.elsevier.com/reader/sd/pii/S1053811920303372?token=1BD2A46B741E3A75301A1E357D418D61C6C40CEA4DECE345D7C1D2185C187EDA38C2489607D34FB1F743B6F60BBF0226) | [data & code](https://github.com/cosanlab/affective_ISRSA)
+Chen, P.H.A., Jolly, E., Cheong, J.H., & Chang, L.J. (2020). <span class="paper-title">Intersubject representational similarity analysis reveals individual variations in affective experience when watching erotic movies</span>. *NeuroImage* 116851. [manuscript](https://reader.elsevier.com/reader/sd/pii/S1053811920303372?token=1BD2A46B741E3A75301A1E357D418D61C6C40CEA4DECE345D7C1D2185C187EDA38C2489607D34FB1F743B6F60BBF0226) | [data & code](https://github.com/cosanlab/affective_ISRSA)
 
 ## 2019
 
-Chen, P.H.A., Cheong, J.H., Jolly, E., Elhence, H., Wager, T.D., & Chang, L.J. (2019). <span class="paper-title">Socially transmitted placebo effects</span>. *Nature Human Behavior* *3*, 1295-1305.  
-[manuscript](http://bit.ly/2Pppjg7) | [data & code](https://github.com/cosanlab/socially_transmitted_placebo_effects)
+Chen, P.H.A., Cheong, J.H., Jolly, E., Elhence, H., Wager, T.D., & Chang, L.J. (2019). <span class="paper-title">Socially transmitted placebo effects</span>. *Nature Human Behavior* *3*, 1295-1305. [manuscript](http://bit.ly/2Pppjg7) | [data & code](https://github.com/cosanlab/socially_transmitted_placebo_effects)
 
-Jolly, E.\*, Tamir, D.I.\*, Burum, B.A., & Mitchell, J.P. (2019). <span class="paper-title">Wanting without enjoying: The social value of sharing experiences</span>. *PLoS One* *14(4)*, e0215318.  
-\*Equal contribution  
-[manuscript](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215318) | [data & code](https://osf.io/j2ych/)
+Jolly, E.\*, Tamir, D.I.\*, Burum, B.A., & Mitchell, J.P. (2019). <span class="paper-title">Wanting without enjoying: The social value of sharing experiences</span>. *PLoS One* *14(4)*, e0215318. [manuscript](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215318) | [data & code](https://osf.io/j2ych/)
 
-Jolly, E., & Chang, L.J. (2019). <span class="paper-title">The Flatland Fallacy:  Moving Beyond Low Dimensional Thinking</span>. *Topics in Cognitive Science* 1-22.  
-[manuscript](https://onlinelibrary.wiley.com/doi/epdf/10.1111/tops.12404) | [data & code](https://github.com/cosanlab/Flatland_Fallacy)
+Jolly, E., & Chang, L.J. (2019). <span class="paper-title">The Flatland Fallacy:  Moving Beyond Low Dimensional Thinking</span>. *Topics in Cognitive Science* 1-22. [manuscript](https://onlinelibrary.wiley.com/doi/epdf/10.1111/tops.12404) | [data & code](https://github.com/cosanlab/Flatland_Fallacy)
 
 ## 2018
 
-Jolly, E. (2018). <span class="paper-title">Pymer4: Connecting R and Python for linear mixed modeling</span>. *Journal of Open Source Software* *3(31)*, 862.  
-[manuscript](http://joss.theoj.org/papers/10.21105/joss.00862) | [toolbox](https://eshinjolly.com/pymer4)
+Jolly, E. (2018). <span class="paper-title">Pymer4: Connecting R and Python for linear mixed modeling</span>. *Journal of Open Source Software* *3(31)*, 862. [manuscript](http://joss.theoj.org/papers/10.21105/joss.00862) | [toolbox](https://eshinjolly.com/pymer4)
 
-Chang, L. J. & Jolly E. (2018). <span class="paper-title">Emotions as computational signals of goal error. In A. Fox, R. Lapate, A. Shackman & R. Davidson (Eds),</span> *The Nature of Emotion* (343-351). Oxford University Press.  
-[manuscript](https://eshinjolly.com/assets/pdfs/Jolly_Emotions_Chapter.pdf)
+Chang, L. J. & Jolly E. (2018). <span class="paper-title">Emotions as computational signals of goal error. In A. Fox, R. Lapate, A. Shackman & R. Davidson (Eds),</span> *The Nature of Emotion* (343-351). Oxford University Press. [manuscript](https://eshinjolly.com/assets/pdfs/Jolly_Emotions_Chapter.pdf)
 
 ## 2017
 
-Cheong, J.C., Jolly, E., Sul, S., & Chang, L.J. (2017). <span class="paper-title">Computational Models in Social and Affective Neuroscience in Moustafa, A. (Eds),</span> *Computational Models of Brain and Behavior* (229-245). Hoboken, NJ: Wiley.  
-[manuscript](http://onlinelibrary.wiley.com/doi/10.1002/9781119159193.ch17/summary)
+Cheong, J.C., Jolly, E., Sul, S., & Chang, L.J. (2017). <span class="paper-title">Computational Models in Social and Affective Neuroscience in Moustafa, A. (Eds),</span> *Computational Models of Brain and Behavior* (229-245). Hoboken, NJ: Wiley. [manuscript](http://onlinelibrary.wiley.com/doi/10.1002/9781119159193.ch17/summary)
 
-Rane, S.\*, Jolly, E.\*, Park, A.\*, Jang, H\*., & Craddock, R.C. (2017). <span class="paper-title">Developing predictive biomarkers using whole-brain classifiers: Application to the ABIDE I dataset</span>. *Research Ideas and Outcomes* 3:e12733.  
-\*Equal contribution  
-[manuscript](https://riojournal.com/article/12733/download/pdf/)  
+Rane, S.\*, Jolly, E.\*, Park, A.\*, Jang, H\*., & Craddock, R.C. (2017). <span class="paper-title">Developing predictive biomarkers using whole-brain classifiers: Application to the ABIDE I dataset</span>. *Research Ideas and Outcomes* 3:e12733. [manuscript](https://riojournal.com/article/12733/download/pdf/)  
 
 ## 2014
 
-Moran, J.M., Jolly, E., & Mitchell, J.P. (2014). <span class="paper-title">Spontaneous mentalizing predicts the fundamental attribution error</span>. *Journal of Cognitive Neuroscience 26(3)*, 569-576.  
-[manuscript](https://dash.harvard.edu/bitstream/handle/1/13457155/jocn_a_00513.pdf?sequence=1)
+Moran, J.M., Jolly, E., & Mitchell, J.P. (2014). <span class="paper-title">Spontaneous mentalizing predicts the fundamental attribution error</span>. *Journal of Cognitive Neuroscience 26(3)*, 569-576. [manuscript](https://dash.harvard.edu/bitstream/handle/1/13457155/jocn_a_00513.pdf?sequence=1)
 
 ## 2012
 
-Moran, J.M., Jolly, E., & Mitchell, J.P. (2012). <span class="paper-title">Social-cognitive deficits in normal aging</span>. *Journal of Neuroscience 32(16)*, 5553-5561.  
-[manuscript](http://www.jneurosci.org/content/jneuro/32/16/5553.full.pdf)
+Moran, J.M., Jolly, E., & Mitchell, J.P. (2012). <span class="paper-title">Social-cognitive deficits in normal aging</span>. *Journal of Neuroscience 32(16)*, 5553-5561. [manuscript](http://www.jneurosci.org/content/jneuro/32/16/5553.full.pdf)
 
 ## 2011
 
-Jolly, E. (2011). <span class="paper-title">Testing domain specificity: Conceptual knowledge of living and non-living things</span>. *The Yale Review of Undergraduate Research in Psychology 2*, 94-118.  
-[manuscript](https://campuspress.yale.edu/yrurp/files/2015/11/2010_Jolly-Conceptual-Knowledge-Organization-1un1c9m.pdf)
+Jolly, E. (2011). <span class="paper-title">Testing domain specificity: Conceptual knowledge of living and non-living things</span>. *The Yale Review of Undergraduate Research in Psychology 2*, 94-118. [manuscript](https://campuspress.yale.edu/yrurp/files/2015/11/2010_Jolly-Conceptual-Knowledge-Organization-1un1c9m.pdf)
+
+*\*denotes equal author contribution for that publication*
 
 <style>
    	@reference "tailwindcss";
