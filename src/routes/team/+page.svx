@@ -101,7 +101,7 @@ Jinwoo studies the paradoxical nature of human emotion; its individuality and un
   </div>
   <div class="bio">
 
-Jacob (he/him) graduated from Pomona College with a B.A. in Cognitive Science and dual minors in Math and Psychology. His primary research interests include tools, collective cognition, and social decision-making and reasoning. Outside the lab, he enjoys writing [electronic music](https://soundcloud.com/jczimm), generative drawing, and cooking.
+Jacob (he/him) studies sociocognitive processes of collaborative thought, including collective cognition, (joint) tool usage, and social decision-making and reasoning. He also seeks to advance collaborative scientific thought through computational methods development. Before SciMinds, he graduated from Pomona College with a BA in Cognitive Science and dual minors in Math and Psychology, then worked as a dual lab manager in Psychology at USC. Outside the lab, he enjoys writing [experimental electronic music](https://soundcloud.com/jczimm), creative coding (e.g., algorithmic drawing, shaders, demoscene), and hiking.
 
 <div class="links">
 
