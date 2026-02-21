@@ -13,19 +13,21 @@ h1: Research Publications
 
 ## Work-in-Progress
 
-Kwon, D. Jolly, E., Chang, L.J., Shim, W.M. (in prep). <span class="paper-title">Modeling dynamic social interactions reveals neural representions of multidimensional social relational knowledge</span>. 
-
 Choi, Y.J., Jolly, E., Smith A., Gangadharan, A.A., Hoidal, A.S. & Chang, L.J.  (in prep). <span class="paper-title">Balancing Guilt and Costs: The Role of Emotions and Exogenous Constraints for End-of-Life Care</span>
 
 Jolly, E., Sadhukha, S., Iqbal, M., Chen, J. & Chang, L.J. (in prep). <span class="paper-title">Person memory is supported by the neural reinstatement of social interactions</span>.
+
+## 2026
+
+Kwon, D., Jolly, E., Chang, L. J., & Shim, W. M. (under review). <span class="paper-title">Neural representations of dynamic social interactions</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.64898/2026.02.01.703160v1)
 
 ## 2025
 
 Yang, M. Chen, P.A., Brandt, A.M., Sadhukhka, S., Farrens, M., Jolly, E., Chang, L.J. (under review). <span class="paper-title">Structured Neural Variability from Repeated Naturalistic Video Watching Experiences</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.11.07.687258v1.abstract)
 
-Kwon, D., Jolly, E., Chang, L.J, Shim, W.M. (2025). <span class="paper-title">Neural representation of social relationship graphs through multidimensional modeling dynamic social interactions</span>. *Ccneuro.* [manuscript](https://2025.ccneuro.org/abstract_pdf/Kwon_2025_Neural_Representation_Social_Relationship_Graphs_Multidimensional.pdf)
-
 Varrier, R.S., Su, Z. Liang, Q., Benson, T. Jolly, E., & Finn, E.S. (under review). <span class="paper-title">Shared and individual tuning curves for social vision</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.01.19.633772v1)
+
+Kwon, D., Jolly, E., Chang, L.J, Shim, W.M. (2025). <span class="paper-title">Neural representation of social relationship graphs through multidimensional modeling dynamic social interactions</span>. *Ccneuro.* [manuscript](https://2025.ccneuro.org/abstract_pdf/Kwon_2025_Neural_Representation_Social_Relationship_Graphs_Multidimensional.pdf)
 
 Le, K.\* Jadhav, A.\* & Jolly, E. (2025). <span class="paper-title">Statistical Intuitions for Social Scientists</span>. [open course materials](https://stat-intuitions.com/)  
 

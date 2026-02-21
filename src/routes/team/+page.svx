@@ -150,6 +150,26 @@ Chaolan is a Ph.D. candidate in Cognitive Science at UC San Diego. She is intere
   </div>
 </div>
 
+## Masters Students
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/ajinkya-jadhav.jpg" alt="Chaolan Lin" />
+    <h3 class="name">Ajinkya Jadhav</h3>
+    <p class="subtitle">Mechanical Engineering</p>
+  </div>
+  <div class="bio">
+
+Ajinkya is a Masters Student in Engineering with a strong background in Computer Vision, Multi-Modal AI, Deep Learning and Robotics. He is interested in applying his background to build rich computational models of naturalistic fMRI recordings to unpack how social memories are encoded and reinstated. He also served as the first Teaching Assistant with Eshin for [PSYC 201B](https://stat-intuitions.com) at UCSD and helped develop and administor foundational coursework. 
+
+<div class="links">
+
+[Website](https://jajinkya211.github.io/) | [LinkedIn](https://www.linkedin.com/in/jajinkya211/) | [Github](https://github.com/jajinkya211) 
+
+</div>
+
+  </div>
+</div>
 
 ## Undergraduates
 
@@ -162,6 +182,19 @@ Chaolan is a Ph.D. candidate in Cognitive Science at UC San Diego. She is intere
   <div class="bio">
 
 Christian was born and raised in El Salvador before moving to Los Angeles at 12 years old. He is a senior at UCSD double majoring in Social Psychology and Sociology, and a member of both departments' honors programs. His fascination with alliances and social strategy began long before he knew it was called social network analysis. This passion sparked when he first started watching Survivor, which he fully intends to win someday. He hopes to connect insights from different fields to better understand real-world group dynamics. Outside of lab, he enjoys playing Clash Royale, hanging with friends, and pretending that binge watching reality TV counts as research.
+
+  </div>
+</div>
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/serena-gao.jpg" alt="Serena Gao" />
+    <h3 class="name">Serena Gao</h3>
+    <p class="subtitle">Psychology</p>
+  </div>
+  <div class="bio">
+
+Serena is an undergraduate student at UCSD majoring in clinical psychology. Her research interests focus on the cognitive and social processes underlying meaning-making. Specifically: How do mental representations of emotions and social agents structure our interpretations of reality? Under what conditions do people revise their beliefs? Outside the lab, she loves listening to podcasts, playing classical flute, and wandering the aisles of Trader Joes.
 
   </div>
 </div>
