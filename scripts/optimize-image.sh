@@ -6,9 +6,9 @@
 # Writes to:   static/optimized/<name>.jpg
 #
 # Usage:
-#   npm run optimize-image -- <name>              # center crop (default)
-#   npm run optimize-image -- <name> north        # keep top of image (e.g. tall portraits)
-#   npm run optimize-image -- <name> center 600   # custom output size
+#   bun run optimize-image -- <name>              # center crop (default)
+#   bun run optimize-image -- <name> north        # keep top of image (e.g. tall portraits)
+#   bun run optimize-image -- <name> center 600   # custom output size
 #
 # Requires: ImageMagick (magick)
 
@@ -20,16 +20,16 @@ GRAVITY="center"
 
 name="${1:-}"
 if [[ -z "$name" ]]; then
-  echo "Usage: npm run optimize-image -- <name> [gravity] [size]"
+  echo "Usage: bun run optimize-image -- <name> [gravity] [size]"
   echo ""
   echo "  name      Image filename without extension (e.g. serena-gao)"
   echo "  gravity   Crop anchor: center (default), north, south, east, west"
   echo "  size      Output dimension in px (default: 800)"
   echo ""
   echo "Examples:"
-  echo "  npm run optimize-image -- serena-gao"
-  echo "  npm run optimize-image -- chaolan-lin north"
-  echo "  npm run optimize-image -- chaolan-lin north 600"
+  echo "  bun run optimize-image -- serena-gao"
+  echo "  bun run optimize-image -- chaolan-lin north"
+  echo "  bun run optimize-image -- chaolan-lin north 600"
   exit 1
 fi
 

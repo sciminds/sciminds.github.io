@@ -1,7 +1,7 @@
 # SciMinds Lab Website
 
 Website for the Social Computations & Interacting Minds Research Studio at UC San Diego.  
-Built using SvelteKit and styled with Tailwind CSS.  
+Built using SvelteKit and styled with Tailwind CSS.
 
 ## Project Structure
 
@@ -35,22 +35,23 @@ sciminds.github.io/
 
 ```bash
 # Start development server (opens http://localhost:5173)
-npm run dev
+bun run dev
 
 # Check for errors
-npm run lint
+bun run lint
 
 # Auto-fix formatting
-npm run format
+bun run format
 
 # Build for production
-npm run build
+bun run build
 
 # Preview production build
-npm run preview
+bun run preview
 ```
 
 ## Editing Content (e.g. pubs)
+
 Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte components.
 
 1. Navigate to `src/routes/<page>/+page.svx`
@@ -58,13 +59,15 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 3. Save and see changes live at `localhost:5173`
 
 ## Modifying styles
+
 - Refer to [response-design-guidelines](response-design.md)
 - Core pattern to keep in mind: **design for mobile screens as the default, then apply tailwind modifiers to scale-up to larger screen sizes**
 
 ## Deployment
 
 ### Automatic
-- Site deploys on pushes/merges to the `main` branch: https://sciminds.studio 
+
+- Site deploys on pushes/merges to the `main` branch: https://sciminds.studio
 - This is handled automatically by a Github Actions Workflow: `.github/workflows/pages.yml`
 - Cloudflare (Eshin's personal account) is setup to redirect a few other `sciminds.XXX` domains to `.studio`:
   - `.ai`
@@ -83,9 +86,10 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 - We also redirect the following domains:
   - `sci-minds.com`
   - `scimindsresearch.com`
-- Privacy-preserving website-analytics are available at: https://tinyurl.com/lab-website-analytics 
+- Privacy-preserving website-analytics are available at: https://tinyurl.com/lab-website-analytics
 
 ### Manual
+
 - Deploying to `sciminds.ucsd.edu` requires locally building the site and `rsync`-ing the `build/` folder to our lab static web-server
 - `rsync build/ ucsd-website:/home/e3jolly/public_html/sciminds/`
 
