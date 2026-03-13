@@ -18,11 +18,13 @@
 	const ogImageUrl = $derived(ogImage || `${baseUrl}/og-image.jpg`);
 
 	// Build prose classes - simpler without dark mode detection
-	const proseClasses = typography
-		? 'prose prose-sm md:prose-base lg:prose-lg max-w-[65ch] md:max-w-[72ch] lg:max-w-[78ch] mx-auto prose-custom'
-		: '';
+	const proseClasses = $derived(
+		typography
+			? 'prose prose-sm md:prose-base lg:prose-lg max-w-[65ch] md:max-w-[72ch] lg:max-w-[78ch] mx-auto prose-custom'
+			: ''
+	);
 
-	const layoutClass = layout === 'centered' || layout === 'home' ? 'text-center' : '';
+	const layoutClass = $derived(layout === 'centered' || layout === 'home' ? 'text-center' : '');
 </script>
 
 <svelte:head>
