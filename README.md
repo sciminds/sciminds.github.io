@@ -48,6 +48,9 @@ bun run build
 
 # Preview production build
 bun run preview
+
+# Run layout tests (Playwright)
+bun run test
 ```
 
 ## Editing Content (e.g. pubs)
@@ -60,7 +63,7 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 
 ## Modifying styles
 
-- Refer to [response-design-guidelines](response-design.md)
+- Refer to [responsive-design-guidelines](responsive-design.md)
 - Core pattern to keep in mind: **design for mobile screens as the default, then apply tailwind modifiers to scale-up to larger screen sizes**
 
 ## Deployment
@@ -69,6 +72,7 @@ Most pages use **MDSvex** (`.svx` files) — write Markdown with optional Svelte
 
 - Site deploys on pushes/merges to the `main` branch: https://sciminds.studio
 - This is handled automatically by a Github Actions Workflow: `.github/workflows/pages.yml`
+- Watch a deploy live from the terminal: `gh run watch $(gh run list --limit 1 --json databaseId --jq '.[0].databaseId') --exit-status`
 - Cloudflare (Eshin's personal account) is setup to redirect a few other `sciminds.XXX` domains to `.studio`:
   - `.ai`
   - `.app`
