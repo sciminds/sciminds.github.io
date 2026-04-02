@@ -19,6 +19,8 @@ Jolly, E., Sadhukha, S., Iqbal, M., Chen, J. & Chang, L.J. (in prep). <span clas
 
 ## 2026
 
+Broukhim, A., Weibel, N., Jolly, E. (2026). <span class="paper-title">Same Words, Different Judgements: Modality Effects on Preference Alignment</span>. *arXiv.* [preprint](https://arxiv.org/abs/2602.22710)
+
 Kwon, D., Jolly, E., Chang, L. J., & Shim, W. M. (under review). <span class="paper-title">Neural representations of dynamic social interactions</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.64898/2026.02.01.703160v1)
 
 ## 2025
