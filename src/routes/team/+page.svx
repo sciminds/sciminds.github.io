@@ -58,7 +58,7 @@ Emma is from Los Angeles and earned her BA in Psychology from the University of 
   <div class="avatar-section">
     <img class="avatar" src="/optimized/chaolan-lin.jpg" alt="Chaolan Lin" />
     <h3 class="name">Chaolan Lin</h3>
-    <p class="subtitle">Cognitive Science</p>
+    <p class="subtitle">Psychology</p>
   </div>
   <div class="bio">
 
@@ -140,7 +140,7 @@ My research interests lie at the intersection of machine-learning, human-compute
   </div>
   <div class="bio">
 
-Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He explores ways to blend user experience, web design, and video games with experimental methods and education technology, and is an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
+Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He explores ways to blend user experience, web design, and video games with experimental methods and education technology. Prior to graduate school he was a post-bac research scientist in the lab and an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
 
 <div class="links">
 
