@@ -136,10 +136,11 @@ My research interests lie at the intersection of machine-learning, human-compute
   <div class="avatar-section">
     <img class="avatar" src="/optimized/justin-moran.jpg" alt="Justin Moran" />
     <h3 class="name">Justin Moran</h3>
+    <p class="subtitle">Psychology</p>
   </div>
   <div class="bio">
 
-Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He is currently a Research Scientist exploring ways to blend user experience, web design, and video games with experimental methods and education technology, and an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
+Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He explores ways to blend user experience, web design, and video games with experimental methods and education technology, and is an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
 
 <div class="links">
 
@@ -175,7 +176,7 @@ Serena is an undergraduate student at UCSD majoring in clinical psychology. Her 
   </div>
   <div class="bio">
 
-Christian was born and raised in El Salvador before moving to Los Angeles at 12 years old. He is a senior at UCSD double majoring in Social Psychology and Sociology, and a member of both departments' honors programs. His fascination with alliances and social strategy began long before he knew it was called social network analysis. This passion sparked when he first started watching Survivor, which he fully intends to win someday. He hopes to connect insights from different fields to better understand real-world group dynamics. Outside of lab, he enjoys playing Clash Royale, hanging with friends, and pretending that binge watching reality TV counts as research.
+Christian was born and raised in El Salvador before moving to Los Angeles at 12 years old. At UCSD he double majored in Social Psychology and Sociology, and was a member of both departments' honors programs. His fascination with alliances and social strategy began long before he knew it was called social network analysis. This passion was sparked when he first started watching Survivor, which he fully intends to win someday. He hoped to connect insights from different fields to better understand real-world group dynamics. Outside of lab, he enjoyed playing Clash Royale, hanging with friends, and pretending that binge watching reality TV counts as research.
 
   </div>
 </div>
@@ -188,7 +189,7 @@ Christian was born and raised in El Salvador before moving to Los Angeles at 12 
   </div>
   <div class="bio">
 
-Ajinkya is a Masters Student in Engineering with a strong background in Computer Vision, Multi-Modal AI, Deep Learning and Robotics. He is interested in applying his background to build rich computational models of naturalistic fMRI recordings to unpack how social memories are encoded and reinstated. He also served as the first Teaching Assistant with Eshin for [PSYC 201B](https://stat-intuitions.com) at UCSD and helped develop and administor foundational coursework. 
+Ajinkya was a Masters Student in Engineering with a strong background in Computer Vision, Multi-Modal AI, Deep Learning and Robotics. He was interested in applying his background to build rich computational models of naturalistic fMRI recordings to unpack how social memories are encoded and reinstated. He also served as the first Teaching Assistant with Eshin for [PSYC 201B](https://stat-intuitions.com) at UCSD and helped develop and administer foundational coursework. 
 
 <div class="links">
 
