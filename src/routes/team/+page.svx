@@ -52,20 +52,21 @@ Emma is from Los Angeles and earned her BA in Psychology from the University of 
   </div>
 </div>
 
-## Post-bac Research Scientist
+## Post-docs
 
 <div class="team-member">
   <div class="avatar-section">
-    <img class="avatar" src="/optimized/justin-moran.jpg" alt="Justin Moran" />
-    <h3 class="name">Justin Moran</h3>
+    <img class="avatar" src="/optimized/chaolan-lin.jpg" alt="Chaolan Lin" />
+    <h3 class="name">Chaolan Lin</h3>
+    <p class="subtitle">Cognitive Science</p>
   </div>
   <div class="bio">
 
-Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He is currently a Research Scientist exploring ways to blend user experience, web design, and video games with experimental methods and education technology, and an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
+Chaolan is a postdoctoral researcher who completed her Ph.D. in Cognitive Science at UC San Diego. She is interested in applying computational modeling to predict human behavior related to affective experiences. Her recent project explores human perception and trust in robots, collaborating with the robotics and neuroscience labs at UCSD. Outside of work, she enjoys taking her dog to the beach, visiting coffee shops, hiking, and paddleboarding.
 
 <div class="links">
 
-[Website](https://kyaneos.github.io/) | [LinkedIn](https://www.linkedin.com/in/thisisjustinmoran/) | [Github](http://github.com/kyaneos) 
+[Website](http://www.chaolanlin.com/) | [LinkedIn](https://www.linkedin.com/in/chaolanlin/) | [Github](https://github.com/Chaolanlin) 
 
 </div>
 
@@ -133,38 +134,16 @@ My research interests lie at the intersection of machine-learning, human-compute
 
 <div class="team-member">
   <div class="avatar-section">
-    <img class="avatar" src="/optimized/chaolan-lin.jpg" alt="Chaolan Lin" />
-    <h3 class="name">Chaolan Lin</h3>
-    <p class="subtitle">Cognitive Science</p>
+    <img class="avatar" src="/optimized/justin-moran.jpg" alt="Justin Moran" />
+    <h3 class="name">Justin Moran</h3>
   </div>
   <div class="bio">
 
-Chaolan is a Ph.D. candidate in Cognitive Science at UC San Diego. She is interested in applying computational modeling to predict human behavior related to affective experiences. Her recent project explores human perception and trust in robots, collaborating with the robotics and neuroscience labs at UCSD. Outside of work, she enjoys taking her dog to the beach, visiting coffee shops, hiking, and paddleboarding.
+Justin is passionate about applying cognitive, educational, and social psychology to improve learning experiences and technologies. He is currently a Research Scientist exploring ways to blend user experience, web design, and video games with experimental methods and education technology, and an occasional Research Assistant in the [LIME](https://www.lime-lab-ucsd.com/) lab, investigating cognition and learning across different mediums. Outside of lab, you can find him climbing, spending time with loved ones, or doing [music](https://linktr.ee/reflections.by).
 
 <div class="links">
 
-[Website](http://www.chaolanlin.com/) | [LinkedIn](https://www.linkedin.com/in/chaolanlin/) | [Github](https://github.com/Chaolanlin) 
-
-</div>
-
-  </div>
-</div>
-
-## Masters Students
-
-<div class="team-member">
-  <div class="avatar-section">
-    <img class="avatar" src="/optimized/ajinkya-jadhav.jpg" alt="Chaolan Lin" />
-    <h3 class="name">Ajinkya Jadhav</h3>
-    <p class="subtitle">Mechanical Engineering</p>
-  </div>
-  <div class="bio">
-
-Ajinkya is a Masters Student in Engineering with a strong background in Computer Vision, Multi-Modal AI, Deep Learning and Robotics. He is interested in applying his background to build rich computational models of naturalistic fMRI recordings to unpack how social memories are encoded and reinstated. He also served as the first Teaching Assistant with Eshin for [PSYC 201B](https://stat-intuitions.com) at UCSD and helped develop and administor foundational coursework. 
-
-<div class="links">
-
-[Website](https://jajinkya211.github.io/) | [LinkedIn](https://www.linkedin.com/in/jajinkya211/) | [Github](https://github.com/jajinkya211) 
+[Website](https://kyaneos.github.io/) | [LinkedIn](https://www.linkedin.com/in/thisisjustinmoran/) | [Github](http://github.com/kyaneos) 
 
 </div>
 
@@ -172,6 +151,21 @@ Ajinkya is a Masters Student in Engineering with a strong background in Computer
 </div>
 
 ## Undergraduates
+
+<div class="team-member">
+  <div class="avatar-section">
+    <img class="avatar" src="/optimized/serena-gao.jpg" alt="Serena Gao" />
+    <h3 class="name">Serena Gao</h3>
+    <p class="subtitle">Psychology</p>
+  </div>
+  <div class="bio">
+
+Serena is an undergraduate student at UCSD majoring in clinical psychology. Her research interests focus on the cognitive and social processes underlying meaning-making. Specifically: How do mental representations of emotions and social agents structure our interpretations of reality? Under what conditions do people revise their beliefs? Outside the lab, she loves listening to podcasts, playing classical flute, and wandering the aisles of Trader Joes.
+
+  </div>
+</div>
+
+## Alumni
 
 <div class="team-member">
   <div class="avatar-section">
@@ -188,13 +182,19 @@ Christian was born and raised in El Salvador before moving to Los Angeles at 12 
 
 <div class="team-member">
   <div class="avatar-section">
-    <img class="avatar" src="/optimized/serena-gao.jpg" alt="Serena Gao" />
-    <h3 class="name">Serena Gao</h3>
-    <p class="subtitle">Psychology</p>
+    <img class="avatar" src="/optimized/ajinkya-jadhav.jpg" alt="Ajinkya Jadhav" />
+    <h3 class="name">Ajinkya Jadhav</h3>
+    <p class="subtitle">Mechanical Engineering</p>
   </div>
   <div class="bio">
 
-Serena is an undergraduate student at UCSD majoring in clinical psychology. Her research interests focus on the cognitive and social processes underlying meaning-making. Specifically: How do mental representations of emotions and social agents structure our interpretations of reality? Under what conditions do people revise their beliefs? Outside the lab, she loves listening to podcasts, playing classical flute, and wandering the aisles of Trader Joes.
+Ajinkya is a Masters Student in Engineering with a strong background in Computer Vision, Multi-Modal AI, Deep Learning and Robotics. He is interested in applying his background to build rich computational models of naturalistic fMRI recordings to unpack how social memories are encoded and reinstated. He also served as the first Teaching Assistant with Eshin for [PSYC 201B](https://stat-intuitions.com) at UCSD and helped develop and administor foundational coursework. 
+
+<div class="links">
+
+[Website](https://jajinkya211.github.io/) | [LinkedIn](https://www.linkedin.com/in/jajinkya211/) | [Github](https://github.com/jajinkya211) 
+
+</div>
 
   </div>
 </div>
