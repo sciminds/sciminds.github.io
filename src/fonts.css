@@ -38,7 +38,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/styrene-font-family/StyreneA-Regular-Trial-BF63f6cbd970ee9.otf')
+	src: url('/fonts/styrene-font-family/StyreneA-Regular-Trial-withAmp-BF63f6cbd970ee9.otf')
 		format('opentype');
 }
 
@@ -56,7 +56,7 @@
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url('/fonts/styrene-font-family/StyreneA-Medium-Trial-BF63f6cbdb24b6d.otf')
+	src: url('/fonts/styrene-font-family/StyreneA-Medium-Trial-withAmp-BF63f6cbdb24b6d.otf')
 		format('opentype');
 }
 
@@ -74,7 +74,8 @@
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url('/fonts/styrene-font-family/StyreneA-Bold-Trial-BF63f6cbda1877f.otf') format('opentype');
+	src: url('/fonts/styrene-font-family/StyreneA-Bold-Trial-withAmp-BF63f6cbda1877f.otf')
+		format('opentype');
 }
 
 @font-face {
