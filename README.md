@@ -51,6 +51,9 @@ bun run preview
 
 # Run layout tests (Playwright)
 bun run test
+
+# Deploy to ucsd (after bun run build!)
+bun run deploy-ucsd
 ```
 
 ## Editing Content (e.g. pubs)
