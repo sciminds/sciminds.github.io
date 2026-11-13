@@ -13,21 +13,29 @@ h1: Research Publications
 
 ## Work-in-Progress
 
+Jolly, E., Sadhukha, S., Iqbal, M., Molani, Z., Walsh, T.M., Manning, J.R., & Chang, L.J. (under revision). <span class="paper-title">People are represented and remembered through their relationships with others</span>. *PsyArxiv.*  
+[preprint](https://psyarxiv.com/bw9r2)
+
+Kwon, D., Jolly, E., Chang, L. J., & Shim, W. M. (under review). <span class="paper-title">Neural representations of dynamic social interactions</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.64898/2026.02.01.703160v1)
+
+Yang, M. Chen, P.A., Brandt, A.M., Sadhukhka, S., Farrens, M., Jolly, E., Chang, L.J. (under review). <span class="paper-title">Structured Neural Variability from Repeated Naturalistic Video Watching Experiences</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.11.07.687258v1.abstract)
+
 Choi, Y.J., Jolly, E., Smith A., Gangadharan, A.A., Hoidal, A.S. & Chang, L.J.  (in prep). <span class="paper-title">Balancing Guilt and Costs: The Role of Emotions and Exogenous Constraints for End-of-Life Care</span>
 
 Jolly, E., Sadhukha, S., Iqbal, M., Chen, J. & Chang, L.J. (in prep). <span class="paper-title">Person memory is supported by the neural reinstatement of social interactions</span>.
 
 ## 2026
 
-Broukhim, A., Weibel, N., Jolly, E. (2026). <span class="paper-title">Same Words, Different Judgements: Modality Effects on Preference Alignment</span>. *arXiv.* [preprint](https://arxiv.org/abs/2602.22710)
+Lee, J., Jolly, E. (2026). <span class="paper-title">Differentiable Inter-sample Modeling</span>. *UniReps (forthcoming)*. 
 
-Kwon, D., Jolly, E., Chang, L. J., & Shim, W. M. (under review). <span class="paper-title">Neural representations of dynamic social interactions</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.64898/2026.02.01.703160v1)
+Broukhim, A., Weibel, N., Jolly, E. (2026). <span class="paper-title">Same Words, Different Judgements: Modality Effects on Preference Alignment</span>. *NeurIPS (forthcoming).* [preprint](https://arxiv.org/abs/2602.22710)
+
+Liang, Q., Varrier, R.S., Jolly, E., & Finn, E.S. (2026). Agency boosts sensitivity to social interactions through information seeking. *PNAS (forthcoming).* [preprint](https://osf.io/preprints/psyarxiv/ufgkb)
+
+Varrier, R.S., Su, Z. Liang, Q., Benson, T. Jolly, E., & Finn, E.S. (2026). <span class="paper-title">Shared and individual tuning curves for social vision</span>. *Open Mind.* [manuscript](https://doi.org/10.1162/OPMI.a.347)
 
 ## 2025
 
-Yang, M. Chen, P.A., Brandt, A.M., Sadhukhka, S., Farrens, M., Jolly, E., Chang, L.J. (under review). <span class="paper-title">Structured Neural Variability from Repeated Naturalistic Video Watching Experiences</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.11.07.687258v1.abstract)
-
-Varrier, R.S., Su, Z. Liang, Q., Benson, T. Jolly, E., & Finn, E.S. (under review). <span class="paper-title">Shared and individual tuning curves for social vision</span>. *bioRxiv.* [preprint](https://www.biorxiv.org/content/10.1101/2025.01.19.633772v1)
 
 Kwon, D., Jolly, E., Chang, L.J, Shim, W.M. (2025). <span class="paper-title">Neural representation of social relationship graphs through multidimensional modeling dynamic social interactions</span>. *Ccneuro.* [manuscript](https://2025.ccneuro.org/abstract_pdf/Kwon_2025_Neural_Representation_Social_Relationship_Graphs_Multidimensional.pdf)
 
@@ -37,10 +45,6 @@ Le, K.\* Jadhav, A.\* & Jolly, E. (2025). <span class="paper-title">Statistical 
 
 Gao, X., Jolly, E., Yu, H., Liu, H., Zhou, X., & Chang, L.J. (2024). <span class="paper-title">The psychological, computational, and neural foundations of indebtedness</span>. *Nature Communications*.  
 [manuscript](https://www.nature.com/articles/s41467-023-44286-9.epdf?sharing_token=NIf7F6ZBWfJIfbGC8ILBZdRgN0jAjWel9jnR3ZoTv0OnNr1VgUao8PGix03Ez_tPL329X4MVbjab8h0_bmcT6IcqcyihbqbYPkQGhGb8nzxaJBfs-C62qJB_ofzGcLQq2UJ8ibYvEAPQ5P2iKoh6bTqwsIP5OEmcEzy2Wyp96C4%3D)
-
-Jolly, E., Sadhukha, S., Iqbal, M., Molani, Z., Walsh, T.M., Manning, J.R., & Chang, L.J. (under revision). <span class="paper-title">People are represented and remembered through their relationships with others</span>. *PsyArxiv.*  
-[preprint](https://psyarxiv.com/bw9r2)
-
 ## 2023
 
 Jolly, E.\*, Cheong, J.H.\*, Xie, T.\*, Byrne, S. Kenny, M., & Chang, L.J. (2023). <span class="paper-title">Py-Feat: Python Facial Expression Analysis Toolbox</span>. *Affective Science*.  [manuscript](https://doi.org/10.1007/s42761-023-00191-4) | [toolbox](https://py-feat.org/)  
